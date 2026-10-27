@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#f8f4ef">
-  <meta name="description" content="郭柏峰與張原榆的婚禮邀請函，誠摯邀請您一同分享幸福時刻。">
+  <meta name="description" content="郭柏峰與張原榆的婚禮邀請函">
   <title>郭柏峰 & 張原榆｜Wedding Invitation</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,73 +22,50 @@
       --deep-brown: #3f332c;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 20px;
     }
 
     body {
       margin: 0;
-      color: var(--brown);
       background: var(--cream);
+      color: var(--brown);
       font-family: "Noto Serif TC", "Songti TC", serif;
       text-align: center;
       -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
     }
 
-    a { color: inherit; }
+    a {
+      color: inherit;
+    }
 
-    /* 滿版婚紗照封面 */
+    /* 首頁：原始婚紗照完整顯示，文字全部放在照片下方 */
     .hero {
       position: relative;
-      min-height: 100svh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 56px clamp(28px, 8vw, 120px);
+      align-items: center;
+      width: 100%;
+      padding: 0 0 46px;
       overflow: hidden;
-      isolation: isolate;
-      text-align: left;
-      background: #3f332c;
-      color: #fff8ee;
+      background: var(--paper);
+      text-align: center;
     }
 
     .hero-photo {
-      position: absolute;
-      inset: 0;
-      z-index: -2;
+      display: block;
+      position: relative;
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 52%;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      background: linear-gradient(
-        90deg,
-        rgba(38, 27, 22, .78) 0%,
-        rgba(38, 27, 22, .57) 28%,
-        rgba(38, 27, 22, .16) 58%,
-        rgba(38, 27, 22, .04) 100%
-      );
-      pointer-events: none;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 22px;
-      border: 1px solid rgba(231, 197, 148, .65);
-      pointer-events: none;
-      z-index: -1;
+      height: auto;
+      max-height: none;
+      object-fit: contain;
+      object-position: center;
+      margin: 0;
+      padding: 0;
     }
 
     .eyebrow,
@@ -102,129 +79,105 @@
     }
 
     .hero .eyebrow {
+      margin: 34px 0 18px;
+      color: var(--gold);
       font-size: 13px;
-      letter-spacing: 6px;
-      color: #f1d7ad;
-      margin: 0 0 24px;
+      letter-spacing: 5px;
     }
 
-    .hero .names {
+    .names {
       margin: 0;
+      color: var(--deep-brown);
       font-family: "Noto Serif TC", "Songti TC", serif;
-      font-size: clamp(35px, 5vw, 62px);
+      font-size: clamp(32px, 8vw, 47px);
       font-weight: 400;
-      letter-spacing: clamp(5px, 1vw, 10px);
-      line-height: 1.45;
-      color: #fff8ee;
-      text-shadow: 0 2px 18px rgba(0, 0, 0, .22);
+      letter-spacing: 6px;
+      line-height: 1.55;
     }
 
-    .hero .ampersand {
-      color: #d9b17b;
+    .ampersand {
+      margin: 0 0 4px;
+      color: var(--gold);
       font-family: "Cormorant Garamond", serif;
-      font-size: 38px;
-      font-weight: 400;
+      font-size: 34px;
       font-style: italic;
-      line-height: 1.15;
-      margin: 4px 0 8px 5px;
-    }
-
-    .hero .divider {
-      width: 70px;
-      border: 0;
-      border-top: 1px solid #d9b17b;
-      margin: 27px 0 20px;
-    }
-
-    .hero .hero-date {
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(19px, 2.4vw, 26px);
-      letter-spacing: 4px;
-      color: #fff8ee;
-    }
-
-    .hero .hero-subtitle {
-      margin-top: 12px;
-      font-size: 13px;
-      letter-spacing: 3px;
-      color: #f1d7ad;
-    }
-
-    .hero .hero-message {
-      margin: 22px 0 0;
-      font-size: 14px;
-      line-height: 2.3;
-      letter-spacing: 1.5px;
-      color: #fff8ee;
-    }
-
-    .scroll-link {
-      margin-top: 30px;
-      font-family: "Cormorant Garamond", serif;
-      font-size: 12px;
-      letter-spacing: 4px;
-      text-decoration: none;
-      color: #f1d7ad;
+      line-height: 1.25;
     }
 
     .divider {
-      width: 54px;
+      width: 55px;
+      margin: 24px auto;
       border: 0;
       border-top: 1px solid var(--gold);
-      margin: 26px auto;
     }
 
     .hero-date {
-      font-family: "Cormorant Garamond", "Noto Serif TC", serif;
-      font-size: 18px;
-      letter-spacing: 4px;
       color: var(--deep-brown);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 22px;
+      letter-spacing: 4px;
     }
 
     .hero-subtitle {
       margin-top: 10px;
-      font-size: 14px;
-      letter-spacing: 3px;
       color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 3px;
     }
 
     .hero-message {
-      margin: 25px 0 0;
+      margin: 23px 18px 0;
+      color: #6f5d51;
       font-size: 14px;
       line-height: 2.5;
-      letter-spacing: 1.5px;
-      color: #6f5d51;
+      letter-spacing: 1.3px;
     }
 
-    section { padding: 78px 22px; }
+    .scroll-link {
+      margin-top: 27px;
+      color: var(--muted);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 12px;
+      letter-spacing: 4px;
+      text-decoration: none;
+    }
+
+    section {
+      padding: 76px 22px;
+    }
 
     .section-label {
-      font-size: 13px;
-      color: var(--gold);
-      letter-spacing: 4px;
       margin-bottom: 14px;
+      color: var(--gold);
+      font-size: 13px;
+      letter-spacing: 4px;
     }
 
     h2 {
       margin: 0;
+      color: var(--deep-brown);
       font-size: clamp(21px, 5.5vw, 25px);
       font-weight: 400;
       letter-spacing: 4px;
-      color: var(--deep-brown);
     }
 
-    .intro { background: var(--paper); }
+    .intro {
+      background: var(--paper);
+    }
 
     .intro-text {
       max-width: 360px;
       margin: 30px auto 0;
+      color: #6f5d51;
       font-size: 14px;
       line-height: 2.6;
       letter-spacing: 1.2px;
-      color: #6f5d51;
     }
 
-    .countdown-section { background: #eee3d8; }
+    /* 婚禮倒數 */
+    .countdown-section {
+      background: #eee3d8;
+    }
 
     .countdown {
       display: flex;
@@ -233,25 +186,30 @@
       margin: 38px auto 0;
     }
 
-    .count-item { min-width: 52px; }
+    .count-item {
+      min-width: 52px;
+    }
 
     .count-number {
+      color: var(--deep-brown);
       font-family: "Cormorant Garamond", serif;
       font-size: clamp(31px, 8vw, 42px);
       font-weight: 400;
       line-height: 1.2;
       font-variant-numeric: tabular-nums;
-      color: var(--deep-brown);
     }
 
     .count-label {
-      font-size: 12px;
-      color: var(--muted);
-      letter-spacing: 2px;
       margin-top: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 2px;
     }
 
-    .event-section { background: var(--cream); }
+    /* 婚禮資訊 */
+    .event-section {
+      background: var(--cream);
+    }
 
     .event-card {
       max-width: 430px;
@@ -264,11 +222,11 @@
     }
 
     .venue-name {
+      margin: 0 0 27px;
+      color: var(--deep-brown);
       font-size: 21px;
       line-height: 1.9;
       letter-spacing: 2px;
-      margin: 0 0 27px;
-      color: var(--deep-brown);
     }
 
     .event-row {
@@ -278,10 +236,10 @@
 
     .event-label {
       display: block;
-      font-size: 12px;
-      color: var(--muted);
-      letter-spacing: 3px;
       margin-bottom: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 3px;
     }
 
     .event-value {
@@ -292,10 +250,10 @@
     }
 
     .event-note {
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 2.3;
       margin-top: 23px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 2.3;
       letter-spacing: .8px;
     }
 
@@ -304,10 +262,10 @@
       margin-top: 24px;
       padding: 14px 25px;
       border: 1px solid var(--gold);
-      text-decoration: none;
+      color: var(--brown);
       font-size: 13px;
       letter-spacing: 2px;
-      color: var(--brown);
+      text-decoration: none;
       transition: background .2s, color .2s;
     }
 
@@ -316,16 +274,17 @@
       color: white;
     }
 
+    /* 結尾 */
     .closing {
-      background: #eee3d8;
       padding: 70px 24px;
+      background: #eee3d8;
     }
 
     .closing-names {
       margin-top: 28px;
+      color: var(--deep-brown);
       font-size: 20px;
       letter-spacing: 3px;
-      color: var(--deep-brown);
     }
 
     .gift-note {
@@ -333,58 +292,63 @@
       margin: 32px auto 0;
       padding: 25px 12px;
       border-top: 1px solid #d9c5b2;
+      color: #796658;
       font-size: 14px;
       line-height: 2.5;
       letter-spacing: 1px;
-      color: #796658;
     }
 
     .footer {
       padding: 26px 12px;
       background: var(--deep-brown);
-      color: #f8f4ef;
+      color: var(--cream);
       font-size: 12px;
       letter-spacing: 3px;
     }
 
     @media (max-width: 600px) {
       .hero {
-        min-height: 100svh;
-        padding: 50px 30px;
+        padding-bottom: 34px;
       }
 
-      .hero-photo { object-position: 58% center; }
-
-      .hero .names {
-        font-size: clamp(34px, 9vw, 46px);
+      .hero-photo {
+        width: 100%;
+        height: auto;
+        max-height: none;
+        object-fit: contain;
       }
 
       .hero .eyebrow {
+        margin-top: 27px;
+        font-size: 12px;
         letter-spacing: 4px;
-        font-size: 11px;
       }
 
-      .hero .hero-date {
-        font-size: 19px;
+      .names {
+        font-size: clamp(30px, 8vw, 40px);
+        letter-spacing: 4px;
+      }
+
+      .hero-date {
+        font-size: 20px;
         letter-spacing: 3px;
       }
 
-      .hero .hero-message { font-size: 13px; }
-
-      .hero::before {
-        background: linear-gradient(
-          90deg,
-          rgba(38, 27, 22, .76) 0%,
-          rgba(38, 27, 22, .47) 56%,
-          rgba(38, 27, 22, .12) 100%
-        );
+      .hero-message {
+        font-size: 13px;
       }
 
-      .hero::after { inset: 14px; }
+      .countdown {
+        gap: 8px;
+      }
 
-      .countdown { gap: 8px; }
-      .count-item { min-width: 46px; }
-      .count-number { font-size: 28px; }
+      .count-item {
+        min-width: 46px;
+      }
+
+      .count-number {
+        font-size: 28px;
+      }
 
       section {
         padding-left: 18px;
@@ -393,7 +357,9 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
+      html {
+        scroll-behavior: auto;
+      }
     }
   </style>
 </head>
@@ -401,7 +367,6 @@
 <body>
   <main>
     <header class="hero">
-      <!-- 使用原始照片，不經 AI 重繪 -->
       <img
         class="hero-photo"
         src="A260820-75.jpeg"
@@ -409,6 +374,7 @@
       >
 
       <div class="eyebrow">Wedding Invitation</div>
+
       <h1 class="names">郭柏峰</h1>
       <div class="ampersand">&amp;</div>
       <h1 class="names">張原榆</h1>
@@ -525,8 +491,9 @@
 
   <script>
     (function () {
-      // 婚禮時間：台灣時間 2026/12/25 中午 12:00
-      const weddingTime = new Date("2026-12-25T12:00:00+08:00").getTime();
+      const weddingTime = new Date(
+        "2026-12-25T12:00:00+08:00"
+      ).getTime();
 
       const daysEl = document.getElementById("days");
       const hoursEl = document.getElementById("hours");
@@ -538,14 +505,21 @@
         const remaining = weddingTime - Date.now();
 
         if (remaining <= 0) {
-          countdownEl.innerHTML = "<p>今天是值得紀念的日子，祝福滿滿！</p>";
+          countdownEl.innerHTML =
+            "<p>今天是值得紀念的日子，祝福滿滿！</p>";
           return;
         }
 
         const days = Math.floor(remaining / 86400000);
-        const hours = Math.floor((remaining % 86400000) / 3600000);
-        const minutes = Math.floor((remaining % 3600000) / 60000);
-        const seconds = Math.floor((remaining % 60000) / 1000);
+        const hours = Math.floor(
+          (remaining % 86400000) / 3600000
+        );
+        const minutes = Math.floor(
+          (remaining % 3600000) / 60000
+        );
+        const seconds = Math.floor(
+          (remaining % 60000) / 1000
+        );
 
         daysEl.textContent = String(days).padStart(2, "0");
         hoursEl.textContent = String(hours).padStart(2, "0");
