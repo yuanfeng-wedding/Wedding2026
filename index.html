@@ -1,16 +1,18 @@
+
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#f7f3ed">
-  <meta name="description" content="郭柏峰與張原榆的婚禮邀請，誠摯邀請您一起分享我們的幸福。">
 
-  <title>郭柏峰 &amp; 張原榆｜婚禮邀請</title>
+  <title>郭柏峰 &amp; 張原榆｜Wedding Invitation</title>
+  <meta name="description" content="誠摯邀請您參與郭柏峰與張原榆的婚禮，一同分享幸福與喜悅。">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Serif+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -19,18 +21,18 @@
       --brown: #59483d;
       --muted: #8a7869;
       --gold: #ad9270;
-      --zh: "Noto Serif TC", serif;
-      --en: "Cormorant Garamond", serif;
+      --line: #e3d9cd;
+
+      --en: "Montserrat", sans-serif;
+      --zh: "Noto Sans TC", sans-serif;
+
       --side: clamp(22px, 6vw, 80px);
       --max-width: 1120px;
 
-      /* 全站統一字級 */
-      --eyebrow-size: 15px;
-      --section-title-size: 36px;
-      --section-title-size-mobile: 28px;
-      --section-title-size-small-mobile: 25px;
       --body-copy-size: 18px;
       --body-copy-size-mobile: 15px;
+      --section-title-size: 30px;
+      --section-title-size-mobile: 25px;
     }
 
     * {
@@ -39,28 +41,23 @@
 
     html {
       scroll-behavior: smooth;
-      -webkit-text-size-adjust: 100%;
+      background: var(--cream);
     }
 
     body {
       margin: 0;
-      background: var(--cream);
       color: var(--brown);
+      background: var(--cream);
       font-family: var(--zh);
-      font-size: 15px;
       font-weight: 400;
-      line-height: 1.95;
-      letter-spacing: .045em;
+      line-height: 1.9;
       -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
     img {
       display: block;
       max-width: 100%;
-    }
-
-    figure {
-      margin: 0;
     }
 
     a {
@@ -73,664 +70,557 @@
     }
 
     .inner {
-      width: 100%;
-      max-width: var(--max-width);
+      width: min(calc(100% - var(--side) * 2), var(--max-width));
       margin: 0 auto;
     }
 
-    /* 全站區塊主標題 */
-    .section-title,
-    .info-content .section-title {
-      margin: 0;
-      font-family: var(--en);
-      font-size: var(--section-title-size);
-      font-weight: 400;
-      line-height: 1.25;
-      letter-spacing: .10em;
-      text-align: center;
-    }
+    /* 英文主題統一 */
 
-    /* 全站英文小標 */
     .eyebrow {
-      margin: 0 0 16px;
+      margin: 0 0 12px;
       color: var(--gold);
       font-family: var(--en);
-      font-size: var(--eyebrow-size);
-      font-weight: 400;
-      line-height: 1.4;
-      letter-spacing: .22em;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.5;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
       text-align: center;
     }
 
-    /* 全站中文內文 */
+    .section-title {
+      margin: 0;
+      color: var(--brown);
+      font-family: var(--zh);
+      font-size: var(--section-title-size);
+      font-weight: 500;
+      line-height: 1.5;
+      letter-spacing: 0.08em;
+      text-align: center;
+    }
+
+    .section-heading {
+      margin-bottom: 32px;
+    }
+
     .section-copy {
-      max-width: 640px;
-      margin: 25px auto 0;
+      max-width: 680px;
+      margin: 24px auto 0;
+      color: var(--muted);
       font-family: var(--zh);
       font-size: var(--body-copy-size);
       font-weight: 400;
-      line-height: 2.15;
-      letter-spacing: .045em;
+      line-height: 2.1;
+      letter-spacing: 0.035em;
       text-align: center;
-      overflow-wrap: anywhere;
     }
 
-    .section {
-      width: 100%;
-      padding: 88px var(--side);
-    }
+    /* 01｜首頁 */
 
-    /* 01｜首頁主視覺 */
     .hero {
       position: relative;
       display: flex;
-      min-height: 680px;
-      min-height: 100svh;
+      min-height: 620px;
       align-items: flex-start;
       justify-content: center;
-      padding: 0;
-      overflow: hidden;
-      background: #e9e0d5;
-      isolation: isolate;
+      padding: clamp(48px, 8vw, 92px) var(--side) 48px;
+      background: var(--paper);
+      text-align: center;
     }
 
-    .hero-photo {
+    .hero-image {
       position: absolute;
-      z-index: -2;
       inset: 0;
-    }
-
-    .hero-photo img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center 50%;
+      object-position: center;
     }
 
     .hero::after {
       position: absolute;
-      z-index: -1;
       inset: 0;
-      background: linear-gradient(
-        180deg,
-        rgba(35, 28, 22, .48) 0%,
-        rgba(35, 28, 22, .22) 25%,
-        rgba(35, 28, 22, .02) 52%,
-        rgba(35, 28, 22, .16) 100%
-      );
       content: "";
+      background: linear-gradient(
+        to bottom,
+        rgba(247, 243, 237, 0.91) 0%,
+        rgba(247, 243, 237, 0.76) 22%,
+        rgba(247, 243, 237, 0.25) 52%,
+        rgba(247, 243, 237, 0.04) 100%
+      );
     }
 
     .hero-content {
+      position: relative;
+      z-index: 1;
       width: 100%;
-      padding: clamp(32px, 6vh, 66px) 20px 30px;
-      color: #fffaf3;
-      text-align: center;
-      text-shadow: 0 1px 10px rgba(35, 25, 18, .42);
+      max-width: 900px;
     }
 
     .hero-label {
-      margin: 0 0 12px;
+      margin: 0 0 28px;
+      color: var(--brown);
       font-family: var(--en);
-      font-size: 19px;
-      font-weight: 400;
-      line-height: 1.5;
-      letter-spacing: .24em;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.7;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
     }
 
     .couple-names {
       margin: 0;
+      color: var(--brown);
       font-family: var(--zh);
-      font-size: clamp(28px, 5vw, 42px);
-      font-weight: 400;
+      font-size: clamp(29px, 4vw, 43px);
+      font-weight: 500;
       line-height: 1.6;
-      letter-spacing: .09em;
-    }
-
-    .hero-divider {
-      width: 40px;
-      height: 1px;
-      margin: 16px auto;
-      background: rgba(255, 250, 243, .9);
+      letter-spacing: 0.12em;
     }
 
     .hero-date {
-      margin: 0;
+      margin: 24px 0 0;
+      color: var(--brown);
       font-family: var(--en);
-      font-size: clamp(22px, 3vw, 28px);
-      font-weight: 400;
-      line-height: 1.4;
-      letter-spacing: .12em;
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 1.8;
+      letter-spacing: 0.13em;
     }
 
     .hero-time {
-      margin: 6px 0 0;
+      margin: 4px 0 0;
+      color: var(--brown);
       font-family: var(--zh);
-      font-size: 12px;
-      letter-spacing: .12em;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
     }
 
-    .scroll-note {
-      position: absolute;
-      bottom: 22px;
-      left: 50%;
-      color: #fffaf3;
-      font-family: var(--en);
-      font-size: 12px;
-      letter-spacing: .2em;
-      text-shadow: 0 1px 8px rgba(35, 25, 18, .4);
-      transform: translateX(-50%);
-      white-space: nowrap;
-    }
+    /* 02｜我們的故事 */
 
-    /* 02｜OUR STORY */
     .story {
-      padding-top: 94px;
-      padding-bottom: 94px;
+      padding: clamp(76px, 10vw, 120px) 0;
       background: var(--paper);
     }
 
     .story .section-copy {
-      margin-top: 27px;
+      margin-top: 28px;
     }
 
-    .story .section-title {
-      font-family: var(--zh);
-      letter-spacing: .10em;
-    }
+    /* 03｜婚紗照片 */
 
-    /* 03｜婚紗照：保留原始比例，不裁切 */
     .gallery {
-      padding: 0;
-      background: var(--cream);
+      padding: 0 var(--side) clamp(76px, 10vw, 120px);
+      background: var(--paper);
     }
 
-    /* 電腦版兩張並排，各佔一半 */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0;
-      width: 100%;
       align-items: start;
+      gap: 24px;
+      width: min(100%, var(--max-width));
+      margin: 0 auto;
     }
 
-    .gallery-photo {
-      width: 100%;
-      overflow: hidden;
-      background: var(--cream);
-    }
-
-    .gallery-photo img {
-      display: block;
+    .gallery-image {
       width: 100%;
       height: auto;
       object-fit: contain;
-      object-position: center;
     }
 
     /* 04｜幸福倒數 */
+
     .countdown {
-      padding-top: 88px;
-      padding-bottom: 90px;
+      padding: clamp(72px, 9vw, 108px) var(--side);
       background: var(--cream);
       text-align: center;
     }
 
     .countdown-date {
-      margin: 24px 0 0;
-      font-family: var(--zh);
-      font-size: var(--body-copy-size);
-      letter-spacing: .08em;
+      margin: 22px 0 30px;
+      color: var(--brown);
+      font-family: var(--en);
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 1.8;
+      letter-spacing: 0.1em;
     }
 
     .countdown-grid {
-      display: flex;
-      justify-content: center;
-      gap: clamp(20px, 5vw, 54px);
-      margin-top: 36px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: clamp(12px, 3vw, 32px);
+      width: min(100%, 680px);
+      margin: 0 auto;
     }
 
     .countdown-item {
-      min-width: 48px;
+      min-width: 0;
+      padding: 18px 6px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
 
     .countdown-number {
       display: block;
+      color: var(--brown);
       font-family: var(--en);
-      font-size: clamp(34px, 6vw, 48px);
+      font-size: clamp(30px, 4vw, 44px);
       font-weight: 400;
-      line-height: 1.15;
-      letter-spacing: .04em;
+      line-height: 1.35;
       font-variant-numeric: tabular-nums;
     }
 
     .countdown-label {
       display: block;
-      margin-top: 10px;
+      margin-top: 8px;
       color: var(--muted);
       font-family: var(--zh);
-      font-size: 12px;
-      font-weight: 400;
-      letter-spacing: .08em;
+      font-size: 14px;
+      letter-spacing: 0.12em;
     }
 
     .countdown-note {
-      margin: 26px 0 0;
+      margin: 22px 0 0;
       color: var(--muted);
       font-family: var(--zh);
-      font-size: 12px;
-      letter-spacing: .06em;
+      font-size: 15px;
+      line-height: 1.9;
+      letter-spacing: 0.04em;
     }
 
-    /* 05｜THE CELEBRATION 婚禮資訊 */
-    .wedding-info {
-      padding: 0;
+    /* 05｜婚禮資訊：電腦及手機皆左圖右資訊 */
+
+    .celebration {
+      padding: clamp(76px, 10vw, 120px) 0;
       background: var(--paper);
     }
 
-    .info-layout {
+    .venue-layout {
       display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
-      min-height: 440px;
-    }
-
-    .venue-photo {
-      position: relative;
-      min-width: 0;
-      min-height: 440px;
-      overflow: hidden;
-      background: #e5ddd1;
-    }
-
-    .venue-photo img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 50%;
-    }
-
-    .info-content {
-      display: flex;
-      min-width: 0;
-      flex-direction: column;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
       align-items: center;
-      justify-content: center;
-      padding: 60px clamp(24px, 5vw, 68px);
+      gap: clamp(20px, 3vw, 42px);
+      width: min(calc(100% - var(--side) * 2), 1000px);
+      margin: 0 auto;
+    }
+
+    .venue-image {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .venue-details {
+      min-width: 0;
+      padding: 8px 0;
       text-align: center;
-    }
-
-    .info-content .eyebrow {
-      margin-bottom: 14px;
-    }
-
-    .info-content .section-title {
-      font-family: var(--zh);
-      letter-spacing: .10em;
     }
 
     .venue-hall {
-      margin: 21px 0 0;
+      margin: 0 0 22px;
+      color: var(--brown);
       font-family: var(--zh);
-      font-size: 15px;
-      letter-spacing: .06em;
-    }
-
-    .info-divider {
-      width: 36px;
-      height: 1px;
-      margin: 22px auto;
-      background: var(--gold);
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.8;
+      letter-spacing: 0.04em;
     }
 
     .info-line {
-      margin: 0;
+      margin: 10px 0;
+      color: var(--muted);
       font-family: var(--zh);
-      font-size: 13px;
-      line-height: 2.1;
-      letter-spacing: .015em;
-      overflow-wrap: anywhere;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.9;
+      letter-spacing: 0.025em;
     }
 
-    .info-line + .info-line {
-      margin-top: 6px;
+    .info-line.address {
+      white-space: nowrap;
+      overflow-wrap: normal;
     }
 
-    .map-button {
-      display: inline-flex;
-      min-height: 44px;
-      align-items: center;
-      justify-content: center;
-      margin-top: 26px;
-      padding: 9px 25px;
+    .map-link {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 9px 24px;
       border: 1px solid var(--gold);
       color: var(--brown);
       font-family: var(--en);
-      font-size: 15px;
-      font-weight: 400;
-      letter-spacing: .14em;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
       text-decoration: none;
-      transition: background .25s ease, color .25s ease;
+      text-transform: uppercase;
+      transition: background 0.2s ease, color 0.2s ease;
     }
 
-    .map-button:hover {
+    .map-link:hover {
+      color: var(--paper);
       background: var(--brown);
       border-color: var(--brown);
-      color: #fffaf3;
     }
 
-    /* 06｜A DAY TO REMEMBER */
-    .with-love {
-      padding-top: 82px;
-      padding-bottom: 82px;
-      background: var(--paper);
-    }
+    /* 06｜幸福相聚 */
 
-    .with-love .section-title {
-      font-family: var(--zh);
-      letter-spacing: .10em;
-    }
-
-    /* 07｜最後一張婚紗照：保留原始比例 */
-    .final-photo {
-      padding: 0;
+    .together {
+      padding: clamp(76px, 10vw, 120px) var(--side);
       background: var(--cream);
     }
 
-    .final-photo .gallery-photo {
-      aspect-ratio: auto;
+    .together .section-copy {
+      margin-top: 26px;
     }
 
-    .final-photo .gallery-photo img {
-      display: block;
-      width: 100%;
+    /* 07｜最後一張照片 */
+
+    .final-photo {
+      padding: 0 var(--side);
+      background: var(--cream);
+    }
+
+    .final-photo img {
+      width: min(100%, var(--max-width));
       height: auto;
+      margin: 0 auto;
       object-fit: contain;
     }
 
-    /* 08｜結尾 */
-    .closing {
-      padding: 68px var(--side) 52px;
-      background: var(--cream);
+    /* 08｜頁尾 */
+
+    .footer {
+      padding: clamp(64px, 8vw, 92px) var(--side);
+      background: var(--paper);
       text-align: center;
     }
 
-    .closing-message {
-      max-width: 640px;
-      margin: 0 auto;
+    .footer-copy {
+      margin: 0 auto 30px;
+      color: var(--muted);
       font-family: var(--zh);
       font-size: var(--body-copy-size);
-      font-weight: 400;
-      line-height: 2.15;
-      letter-spacing: .045em;
+      line-height: 2.1;
+      letter-spacing: 0.035em;
     }
 
     .footer-names {
-      margin: 34px 0 0;
+      margin: 0;
+      color: var(--brown);
       font-family: var(--en);
-      font-size: clamp(25px, 4vw, 34px);
-      font-weight: 400;
-      letter-spacing: .19em;
-      line-height: 1.4;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.8;
+      letter-spacing: 0.16em;
     }
 
     .footer-date {
-      margin: 13px 0 0;
+      margin: 10px 0 24px;
       color: var(--muted);
       font-family: var(--en);
-      font-size: 21px;
-      letter-spacing: .15em;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.8;
+      letter-spacing: 0.12em;
     }
 
-    .footer-bottom {
-      margin: 45px 0 0;
-      color: var(--muted);
+    .footer-note {
+      margin: 0;
+      color: var(--gold);
       font-family: var(--en);
       font-size: 11px;
-      letter-spacing: .18em;
+      font-weight: 500;
+      line-height: 1.8;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
     }
 
-    /* 手機版 */
+    /* 平板與手機：仍維持左圖右資訊 */
+
     @media (max-width: 700px) {
       :root {
-        --side: 24px;
-      }
-
-      body {
-        font-size: 14px;
-        line-height: 1.9;
-      }
-
-      .section {
-        padding-top: 65px;
-        padding-bottom: 65px;
-      }
-
-      .section-title,
-      .info-content .section-title {
-        font-size: var(--section-title-size-mobile);
-        letter-spacing: .08em;
+        --body-copy-size: var(--body-copy-size-mobile);
+        --section-title-size: var(--section-title-size-mobile);
+        --side: 18px;
       }
 
       .hero {
-        min-height: 680px;
-        min-height: 100svh;
-      }
-
-      .hero-photo img {
-        object-position: center 50%;
-      }
-
-      .hero-content {
-        padding: 30px 18px 24px;
+        min-height: 540px;
+        padding-top: 42px;
       }
 
       .hero-label {
-        margin-bottom: 10px;
-        font-size: var(--eyebrow-size);
-        letter-spacing: .22em;
+        margin-bottom: 24px;
+        font-size: 12px;
+        letter-spacing: 0.16em;
       }
 
       .couple-names {
-        font-size: clamp(27px, 7.4vw, 36px);
-        letter-spacing: .075em;
-      }
-
-      .hero-divider {
-        margin: 14px auto;
+        font-size: clamp(25px, 7vw, 34px);
+        letter-spacing: 0.08em;
       }
 
       .hero-date {
-        font-size: 23px;
+        margin-top: 20px;
+        font-size: 15px;
       }
 
       .hero-time {
-        font-size: 11px;
+        font-size: 14px;
       }
 
-      .story {
-        padding-top: 68px;
-        padding-bottom: 70px;
+      .section-heading {
+        margin-bottom: 26px;
       }
 
       .section-copy {
-        margin-top: 21px;
-        font-size: var(--body-copy-size-mobile);
-        line-height: 2.15;
-        letter-spacing: .04em;
+        line-height: 2;
       }
 
-      /* 手機版：兩張照片上下排列，保持完整原始比例 */
+      .gallery {
+        padding-right: var(--side);
+        padding-left: var(--side);
+      }
+
       .gallery-grid {
         grid-template-columns: 1fr;
-      }
-
-      .gallery-photo {
-        width: 100%;
-        aspect-ratio: auto;
-      }
-
-      .gallery-photo img {
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-        object-position: center;
-      }
-
-      .countdown {
-        padding-top: 68px;
-        padding-bottom: 70px;
+        gap: 20px;
       }
 
       .countdown-date {
-        font-size: var(--body-copy-size-mobile);
+        font-size: 14px;
       }
 
       .countdown-grid {
-        gap: clamp(13px, 4.5vw, 23px);
-        margin-top: 30px;
+        gap: 8px;
       }
 
       .countdown-item {
-        min-width: 38px;
+        padding: 14px 2px;
       }
 
       .countdown-number {
-        font-size: clamp(30px, 8vw, 39px);
+        font-size: clamp(23px, 6vw, 34px);
       }
 
       .countdown-label {
         font-size: 12px;
+        letter-spacing: 0.06em;
       }
 
-      /* 手機婚禮資訊 */
-      .info-layout {
-        grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
-        min-height: 0;
+      .countdown-note {
+        font-size: 13px;
       }
 
-      .venue-photo {
-        min-height: 390px;
+      /* 重要：不改成上下排列，照片在左、資訊在右 */
+      .venue-layout {
+        grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+        gap: 12px;
+        width: calc(100% - var(--side) * 2);
       }
 
-      .venue-photo img {
+      .venue-image {
+        width: 100%;
+        height: 100%;
+        min-height: 180px;
+        aspect-ratio: 3 / 4;
         object-fit: cover;
-        object-position: center;
       }
 
-      .info-content {
-        padding: 34px 12px;
-      }
-
-      .info-content .eyebrow {
-        margin-bottom: 11px;
-        font-size: 11px;
-        letter-spacing: .08em;
+      .venue-details {
+        padding: 4px 0;
+        text-align: center;
       }
 
       .venue-hall {
-        margin-top: 16px;
-        font-size: 12px;
-        line-height: 1.9;
-        letter-spacing: 0;
-      }
-
-      .info-divider {
-        margin: 16px auto;
+        margin-bottom: 12px;
+        font-size: clamp(13px, 3.6vw, 17px);
+        line-height: 1.7;
+        letter-spacing: 0.01em;
       }
 
       .info-line {
-        font-size: 11px;
-        line-height: 2;
+        margin: 8px 0;
+        font-size: clamp(11px, 2.9vw, 14px);
+        line-height: 1.8;
         letter-spacing: 0;
       }
 
-      .map-button {
-        min-height: 40px;
-        margin-top: 20px;
-        padding: 8px 10px;
-        font-size: 12px;
-        letter-spacing: .07em;
+      .info-line.address {
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: normal;
+        font-size: clamp(10px, 2.6vw, 12px);
+        line-height: 1.7;
       }
 
-      .with-love {
-        padding-top: 64px;
-        padding-bottom: 64px;
+      .map-link {
+        margin-top: 10px;
+        padding: 7px 10px;
+        font-size: 10px;
+        letter-spacing: 0.06em;
       }
 
-      .closing {
-        padding-top: 52px;
-        padding-bottom: 38px;
-      }
-
-      .closing-message {
-        font-size: var(--body-copy-size-mobile);
-        line-height: 2.15;
-      }
-
-      .footer-names {
-        margin-top: 27px;
-        font-size: 27px;
-      }
-
-      .footer-date {
-        font-size: 19px;
-      }
-
-      .footer-bottom {
-        margin-top: 36px;
+      .footer-copy {
+        font-size: var(--body-copy-size);
       }
     }
 
-    /* 較小手機 */
-    @media (max-width: 380px) {
+    @media (max-width: 360px) {
       :root {
-        --side: 18px;
+        --side: 14px;
+        --section-title-size: 23px;
       }
 
-      .section-title,
-      .info-content .section-title {
-        font-size: var(--section-title-size-small-mobile);
+      .hero {
+        min-height: 490px;
+        padding-top: 36px;
       }
 
-      .hero-content {
-        padding-top: 27px;
+      .hero-label {
+        font-size: 11px;
       }
 
       .couple-names {
-        font-size: 27px;
+        font-size: 25px;
       }
 
-      .info-content {
-        padding-right: 8px;
-        padding-left: 8px;
+      .countdown-grid {
+        gap: 4px;
+      }
+
+      .countdown-number {
+        font-size: 23px;
+      }
+
+      .countdown-label {
+        font-size: 11px;
+      }
+
+      .venue-layout {
+        grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+        gap: 9px;
       }
 
       .venue-hall {
-        font-size: 11px;
+        font-size: 12px;
       }
 
       .info-line {
         font-size: 10px;
       }
 
-      .map-button {
-        padding-right: 7px;
-        padding-left: 7px;
-        font-size: 11px;
+      .info-line.address {
+        font-size: 9px;
       }
 
-      .countdown-grid {
-        gap: 11px;
-      }
-
-      .countdown-item {
-        min-width: 34px;
-      }
-
-      .countdown-label {
-        font-size: 11px;
+      .map-link {
+        padding: 6px 7px;
+        font-size: 9px;
       }
     }
 
@@ -742,7 +632,7 @@
       *,
       *::before,
       *::after {
-        transition-duration: .01ms !important;
+        transition-duration: 0.01ms !important;
       }
     }
   </style>
@@ -751,72 +641,69 @@
 <body>
   <main class="page">
 
-    <!-- 01｜首頁主視覺 -->
-    <section class="hero" aria-label="婚禮邀請">
-      <div class="hero-photo">
-        <img
-          src="A260820-74.JPEG"
-          alt="郭柏峰與張原榆的婚紗照"
-          fetchpriority="high"
-        >
-      </div>
+    <!-- 01｜首頁 -->
+    <section class="hero" aria-label="Wedding Invitation">
+      <img
+        class="hero-image"
+        src="A260820-74.JPEG"
+        alt="新人婚紗照片"
+      >
 
       <div class="hero-content">
         <p class="hero-label">WEDDING INVITATION</p>
         <h1 class="couple-names">郭柏峰 &amp; 張原榆</h1>
-        <div class="hero-divider"></div>
         <p class="hero-date">12.25.2026</p>
         <p class="hero-time">星期五・中午 12:00 入席</p>
       </div>
-
-      <div class="scroll-note">SCROLL TO EXPLORE</div>
     </section>
 
-    <!-- 02｜OUR STORY -->
-    <section class="section story">
+    <!-- 02｜我們的故事 -->
+    <section class="story">
       <div class="inner">
-        <p class="eyebrow">OUR STORY</p>
-        <h2 class="section-title">我們的故事</h2>
+        <header class="section-heading">
+          <p class="eyebrow">OUR STORY</p>
+          <h2 class="section-title">我們的故事</h2>
+        </header>
 
         <p class="section-copy">
           從相識到相愛，一路走來經歷了許多難忘的點滴，也讓我們更加珍惜彼此。<br>
-          期待未來的日子裡，還能一起寫下更多屬於我們的故事
+          期待未來的日子裡，還能一起寫下更多屬於我們的故事。
         </p>
       </div>
     </section>
 
-    <!-- 03｜婚紗照 -->
-    <section class="gallery" aria-label="婚紗照片">
+    <!-- 03｜婚紗照片 -->
+    <section class="gallery" aria-label="Our Wedding Photos">
       <div class="gallery-grid">
-        <figure class="gallery-photo">
-          <img
-            src="A260820-216.jpeg"
-            alt="兩人的黑色正式服裝婚紗照"
-            loading="lazy"
-          >
-        </figure>
+        <img
+          class="gallery-image"
+          src="A260820-216.jpeg"
+          alt="新人婚紗合照"
+          loading="lazy"
+        >
 
-        <figure class="gallery-photo">
-          <img
-            src="A260820-94.jpeg"
-            alt="兩人牽手的戶外婚紗照"
-            loading="lazy"
-          >
-        </figure>
+        <img
+          class="gallery-image"
+          src="A260820-94.jpeg"
+          alt="新人婚紗照片"
+          loading="lazy"
+        >
       </div>
     </section>
 
     <!-- 04｜幸福倒數 -->
-    <section class="section countdown">
+    <section class="countdown" id="countdown">
       <div class="inner">
-        <p class="eyebrow" style="font-family: var(--zh); letter-spacing: .12em;">COUNTING DOWN</p>
-        <h2 class="section-title" style="font-family: var(--zh); letter-spacing: .10em;">幸福倒數</h2>
+        <header class="section-heading">
+          <p class="eyebrow">COUNTING DOWN</p>
+          <h2 class="section-title">幸福倒數</h2>
+        </header>
 
-        <p class="countdown-date">2026 年 12 月 25 日・星期五</p>
+        <p class="countdown-date">12.25.2026 · 12:00 PM</p>
 
-        <div class="countdown-grid" role="timer" aria-label="距離婚禮的倒數">
+        <div class="countdown-grid" aria-label="距離婚禮的倒數時間">
           <div class="countdown-item">
-            <span class="countdown-number" id="days">--</span>
+            <span class="countdown-number" id="days">---</span>
             <span class="countdown-label">天</span>
           </div>
 
@@ -837,52 +724,54 @@
         </div>
 
         <p class="countdown-note" id="countdown-note">
-          我們期待與您一起分享這一天。
+          期待與你們一起分享這份幸福。
         </p>
       </div>
     </section>
 
-    <!-- 05｜THE CELEBRATION -->
-    <section class="wedding-info" id="wedding-info">
-      <div class="info-layout">
-
-        <div class="venue-photo">
-          <img
-            src="venue.png"
-            alt="婚禮莊園花藝與噴泉風景"
-            loading="lazy"
-          >
-        </div>
-
-        <div class="info-content">
+    <!-- 05｜婚禮資訊：左圖右資訊 -->
+    <section class="celebration">
+      <div class="inner">
+        <header class="section-heading">
           <p class="eyebrow">THE CELEBRATION</p>
           <h2 class="section-title">婚禮資訊</h2>
+        </header>
 
-          <p class="venue-hall">青青風車莊園【巴洛克廳】</p>
+        <div class="venue-layout">
+          <img
+            class="venue-image"
+            src="venue.png"
+            alt="青青風車莊園婚宴場地"
+            loading="lazy"
+          >
 
-          <div class="info-divider"></div>
+          <div class="venue-details">
+            <h3 class="venue-hall">青青風車莊園【巴洛克廳】</h3>
 
-          <p class="info-line">2026 年 12 月 25 日（星期五）</p>
-          <p class="info-line">中午 12:00 入席</p>
-          <p class="info-line">桃園市蘆竹區正興里中正北路326號</p>
+            <p class="info-line">12.25.2026（星期五）</p>
+            <p class="info-line">中午 12:00 入席</p>
+            <p class="info-line address">桃園市蘆竹區正興里中正北路326號3樓</p>
 
-          <a
-            class="map-button"
-            href="https://www.google.com/maps/dir/?api=1&amp;destination=%E9%9D%92%E9%9D%92%E9%A2%A8%E8%BB%8A%E8%8E%8A%E5%9C%92"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="導航前往青青風車莊園"
-          >OPEN MAP</a>
+            <a
+              class="map-link"
+              href="https://www.google.com/maps/dir/?api=1&amp;destination=%E9%9D%92%E9%9D%92%E9%A2%A8%E8%BB%8A%E8%8E%8A%E5%9C%92"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GET DIRECTIONS
+            </a>
+          </div>
         </div>
-
       </div>
     </section>
 
-    <!-- 06｜A DAY TO REMEMBER -->
-    <section class="section with-love">
+    <!-- 06｜幸福相聚 -->
+    <section class="together">
       <div class="inner">
-        <p class="eyebrow">A DAY TO REMEMBER</p>
-        <h2 class="section-title">幸福相聚</h2>
+        <header class="section-heading">
+          <p class="eyebrow">A DAY TO REMEMBER</p>
+          <h2 class="section-title">幸福相聚</h2>
+        </header>
 
         <p class="section-copy">
           對我們而言，這一天有著特別的意義。因為有你們的陪伴，這份幸福才更加完整。<br>
@@ -891,37 +780,34 @@
       </div>
     </section>
 
-    <!-- 07｜最後一張婚紗照 -->
-    <section class="final-photo" aria-label="婚紗照片">
-      <figure class="gallery-photo">
-        <img
-          src="A260820-75.jpeg"
-          alt="兩人在咖啡廳的婚紗照"
-          loading="lazy"
-        >
-      </figure>
+    <!-- 07｜最後一張照片 -->
+    <section class="final-photo" aria-label="A Day to Remember">
+      <img
+        src="A260820-75.jpeg"
+        alt="新人婚紗照片"
+        loading="lazy"
+      >
     </section>
 
-    <!-- 08｜結尾 -->
-    <footer class="closing">
-      <div class="inner">
-        <p class="closing-message">
-          您的祝福就是最好的禮物，宴席不收禮金，<br>
-          誠摯邀請您前來共享喜悅。
-        </p>
+    <!-- 08｜頁尾 -->
+    <footer class="footer">
+      <p class="footer-copy">
+        您的祝福就是最好的禮物，宴席不收禮金，<br>
+        誠摯邀請您前來共享喜悅。
+      </p>
 
-        <p class="footer-names">KUO <span>&amp;</span> CHANG</p>
-        <p class="footer-date">12.25.2026</p>
-        <p class="footer-bottom">WITH LOVE AND GRATITUDE</p>
-      </div>
+      <p class="footer-names">KUO &amp; CHANG</p>
+      <p class="footer-date">12.25.2026</p>
+      <p class="footer-note">WITH LOVE AND GRATITUDE</p>
     </footer>
 
   </main>
 
   <script>
-    (function () {
-      const weddingDate =
-        new Date("2026-12-25T12:00:00+08:00").getTime();
+    (() => {
+      const weddingDate = new Date(
+        "2026-12-25T12:00:00+08:00"
+      ).getTime();
 
       const daysEl = document.getElementById("days");
       const hoursEl = document.getElementById("hours");
@@ -930,37 +816,25 @@
       const noteEl = document.getElementById("countdown-note");
 
       function updateCountdown() {
-        const difference = weddingDate - Date.now();
+        const distance = weddingDate - Date.now();
 
-        if (difference <= 0) {
-          daysEl.textContent = "00";
+        if (distance <= 0) {
+          daysEl.textContent = "0";
           hoursEl.textContent = "00";
           minutesEl.textContent = "00";
           secondsEl.textContent = "00";
-
           noteEl.textContent =
-            "今天是我們的大日子，謝謝您與我們一起分享幸福。";
-
+            "今天是我們的大日子，謝謝你與我們一同分享幸福！";
           return;
         }
 
-        const days = Math.floor(
-          difference / (1000 * 60 * 60 * 24)
-        );
+        const totalSeconds = Math.floor(distance / 1000);
+        const days = Math.floor(totalSeconds / 86400);
+        const hours = Math.floor((totalSeconds % 86400) / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        const seconds = totalSeconds % 60;
 
-        const hours = Math.floor(
-          (difference / (1000 * 60 * 60)) % 24
-        );
-
-        const minutes = Math.floor(
-          (difference / (1000 * 60)) % 60
-        );
-
-        const seconds = Math.floor(
-          (difference / 1000) % 60
-        );
-
-        daysEl.textContent = String(days).padStart(2, "0");
+        daysEl.textContent = String(days);
         hoursEl.textContent = String(hours).padStart(2, "0");
         minutesEl.textContent = String(minutes).padStart(2, "0");
         secondsEl.textContent = String(seconds).padStart(2, "0");
