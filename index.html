@@ -117,7 +117,7 @@
       text-align: center;
     }
 
-    /* 01｜首頁：奶油白文字、不加淡色遮罩 */
+    /* 01｜首頁：奶油白文字與柔和陰影 */
 
     .hero {
       position: relative;
@@ -145,7 +145,9 @@
       width: 100%;
       max-width: 900px;
       color: var(--ivory);
-      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.28);
+      text-shadow:
+        0 1px 3px rgba(48, 38, 31, 0.22),
+        0 3px 10px rgba(48, 38, 31, 0.18);
     }
 
     .hero-label {
@@ -354,8 +356,6 @@
       overflow-wrap: normal;
     }
 
-    /* 霧金色實心導航按鈕 */
-
     .map-link {
       display: inline-flex;
       min-height: 46px;
@@ -515,7 +515,6 @@
         line-height: 2;
       }
 
-      /* 手機版照片上下排列，兩張都貼齊畫面左右 */
       .gallery-grid {
         grid-template-columns: 1fr;
         gap: 0;
@@ -552,6 +551,7 @@
       }
 
       /* 手機版仍然維持左圖右資訊 */
+
       .venue-layout {
         grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
         gap: 0;
@@ -772,7 +772,7 @@
         </div>
 
         <p class="countdown-note" id="countdown-note">
-          期待與你們一起分享這份幸福。
+          期待與您們一起分享這份幸福。
         </p>
       </div>
     </section>
@@ -798,7 +798,7 @@
 
             <p class="info-line">12.25.2026（星期五）</p>
             <p class="info-line">中午 12:00 入席</p>
-            <p class="info-line address">桃園市蘆竹區正興里中正北路326號</p>
+            <p class="info-line address">桃園市蘆竹區正興里中正北路326號3樓</p>
 
             <a
               class="map-link"
@@ -822,8 +822,8 @@
         </header>
 
         <p class="section-copy">
-          對我們而言，這一天有著特別的意義。因為有你們的陪伴，這份幸福才更加完整。<br>
-          希望能與重要的你們一同度過，留下值得珍藏的美好回憶。
+          對我們而言，這一天有著特別的意義。因為有您們的陪伴，這份幸福才更加完整。<br>
+          希望能與重要的您們一同度過，留下值得珍藏的美好回憶。
         </p>
       </div>
     </section>
@@ -872,7 +872,7 @@
           minutesEl.textContent = "00";
           secondsEl.textContent = "00";
           noteEl.textContent =
-            "今天是我們的大日子，謝謝你與我們一同分享幸福！";
+            "今天是我們的大日子，謝謝您們與我們一同分享幸福！";
           return;
         }
 
