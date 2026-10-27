@@ -21,6 +21,7 @@
       --brown: #59483d;
       --muted: #8a7869;
       --gold: #ad9270;
+      --gold-dark: #8e704e;
       --line: #e3d9cd;
 
       --en: "Montserrat", sans-serif;
@@ -74,7 +75,7 @@
       margin: 0 auto;
     }
 
-    /* 英文主題統一 */
+    /* 英文主題 */
 
     .eyebrow {
       margin: 0 0 12px;
@@ -115,7 +116,7 @@
       text-align: center;
     }
 
-    /* 01｜首頁 */
+    /* 01｜首頁：原始照片，不加淡色遮罩 */
 
     .hero {
       position: relative;
@@ -124,7 +125,7 @@
       align-items: flex-start;
       justify-content: center;
       padding: clamp(48px, 8vw, 92px) var(--side) 48px;
-      background: var(--paper);
+      background: #786d62;
       text-align: center;
     }
 
@@ -137,29 +138,18 @@
       object-position: center;
     }
 
-    .hero::after {
-      position: absolute;
-      inset: 0;
-      content: "";
-      background: linear-gradient(
-        to bottom,
-        rgba(247, 243, 237, 0.91) 0%,
-        rgba(247, 243, 237, 0.76) 22%,
-        rgba(247, 243, 237, 0.25) 52%,
-        rgba(247, 243, 237, 0.04) 100%
-      );
-    }
-
     .hero-content {
       position: relative;
       z-index: 1;
       width: 100%;
       max-width: 900px;
+      color: #fff;
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.38);
     }
 
     .hero-label {
       margin: 0 0 28px;
-      color: var(--brown);
+      color: #fff;
       font-family: var(--en);
       font-size: 15px;
       font-weight: 500;
@@ -170,7 +160,7 @@
 
     .couple-names {
       margin: 0;
-      color: var(--brown);
+      color: #fff;
       font-family: var(--zh);
       font-size: clamp(29px, 4vw, 43px);
       font-weight: 500;
@@ -180,7 +170,7 @@
 
     .hero-date {
       margin: 24px 0 0;
-      color: var(--brown);
+      color: #fff;
       font-family: var(--en);
       font-size: 17px;
       font-weight: 500;
@@ -190,7 +180,7 @@
 
     .hero-time {
       margin: 4px 0 0;
-      color: var(--brown);
+      color: #fff;
       font-family: var(--zh);
       font-size: 16px;
       font-weight: 500;
@@ -208,10 +198,12 @@
       margin-top: 28px;
     }
 
-    /* 03｜婚紗照片 */
+    /* 03｜兩張戶外婚紗照：照片延伸至畫面兩側 */
 
     .gallery {
-      padding: 0 var(--side) clamp(76px, 10vw, 120px);
+      width: 100%;
+      padding: 0;
+      margin: 0;
       background: var(--paper);
     }
 
@@ -219,14 +211,15 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       align-items: start;
-      gap: 24px;
-      width: min(100%, var(--max-width));
-      margin: 0 auto;
+      gap: 0;
+      width: 100%;
+      margin: 0;
     }
 
     .gallery-image {
       width: 100%;
       height: auto;
+      margin: 0;
       object-fit: contain;
     }
 
@@ -291,32 +284,47 @@
       letter-spacing: 0.04em;
     }
 
-    /* 05｜婚禮資訊：電腦及手機皆左圖右資訊 */
+    /* 05｜婚禮資訊：照片貼齊畫面左側，右邊為資訊 */
 
     .celebration {
-      padding: clamp(76px, 10vw, 120px) 0;
+      padding: clamp(76px, 8vw, 100px) 0;
       background: var(--paper);
+    }
+
+    .celebration > .inner {
+      width: 100%;
+      max-width: none;
+    }
+
+    .celebration .section-heading {
+      padding: 0 var(--side);
     }
 
     .venue-layout {
       display: grid;
-      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-      align-items: center;
-      gap: clamp(20px, 3vw, 42px);
-      width: min(calc(100% - var(--side) * 2), 1000px);
-      margin: 0 auto;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      align-items: stretch;
+      gap: 0;
+      width: 100%;
+      margin: 0;
     }
 
     .venue-image {
       width: 100%;
-      height: auto;
+      height: 100%;
+      min-height: 380px;
       aspect-ratio: 4 / 3;
       object-fit: cover;
+      object-position: center;
     }
 
     .venue-details {
+      display: flex;
       min-width: 0;
-      padding: 8px 0;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 36px clamp(18px, 4vw, 60px);
       text-align: center;
     }
 
@@ -346,24 +354,43 @@
     }
 
     .map-link {
-      display: inline-block;
-      margin-top: 18px;
-      padding: 9px 24px;
-      border: 1px solid var(--gold);
-      color: var(--brown);
-      font-family: var(--en);
-      font-size: 12px;
+      display: inline-flex;
+      min-height: 46px;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+      padding: 10px 34px;
+      border: 1px solid var(--gold-dark);
+      border-radius: 2px;
+      color: #fff;
+      background: var(--gold-dark);
+      font-family: var(--zh);
+      font-size: 15px;
       font-weight: 500;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.16em;
       text-decoration: none;
-      text-transform: uppercase;
-      transition: background 0.2s ease, color 0.2s ease;
+      box-shadow: 0 4px 12px rgba(89, 72, 61, 0.12);
+      transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
     }
 
     .map-link:hover {
-      color: var(--paper);
+      color: #fff;
       background: var(--brown);
       border-color: var(--brown);
+      transform: translateY(-1px);
+    }
+
+    .parking-note {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-family: var(--zh);
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 1.8;
+      letter-spacing: 0.025em;
     }
 
     /* 06｜幸福相聚 */
@@ -377,17 +404,21 @@
       margin-top: 26px;
     }
 
-    /* 07｜最後一張照片 */
+    /* 07｜最後一張照片：滿版 */
 
     .final-photo {
-      padding: 0 var(--side);
+      width: 100%;
+      padding: 0;
+      margin: 0;
       background: var(--cream);
     }
 
     .final-photo img {
-      width: min(100%, var(--max-width));
+      display: block;
+      width: 100%;
+      max-width: none;
       height: auto;
-      margin: 0 auto;
+      margin: 0;
       object-fit: contain;
     }
 
@@ -439,7 +470,7 @@
       text-transform: uppercase;
     }
 
-    /* 平板與手機：仍維持左圖右資訊 */
+    /* 平板與手機 */
 
     @media (max-width: 700px) {
       :root {
@@ -481,14 +512,15 @@
         line-height: 2;
       }
 
-      .gallery {
-        padding-right: var(--side);
-        padding-left: var(--side);
-      }
-
+      /* 兩張照片依原比例上下排列，整個區塊滿版 */
       .gallery-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 0;
+      }
+
+      .gallery-image {
+        width: 100%;
+        height: auto;
       }
 
       .countdown-date {
@@ -516,24 +548,23 @@
         font-size: 13px;
       }
 
-      /* 重要：不改成上下排列，照片在左、資訊在右 */
+      /* 手機仍然維持左圖右資訊 */
       .venue-layout {
-        grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-        gap: 12px;
-        width: calc(100% - var(--side) * 2);
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        gap: 0;
+        width: 100%;
       }
 
       .venue-image {
         width: 100%;
         height: 100%;
-        min-height: 180px;
+        min-height: 250px;
         aspect-ratio: 3 / 4;
         object-fit: cover;
       }
 
       .venue-details {
-        padding: 4px 0;
-        text-align: center;
+        padding: 24px 10px;
       }
 
       .venue-hall {
@@ -544,7 +575,7 @@
       }
 
       .info-line {
-        margin: 8px 0;
+        margin: 7px 0;
         font-size: clamp(11px, 2.9vw, 14px);
         line-height: 1.8;
         letter-spacing: 0;
@@ -559,10 +590,16 @@
       }
 
       .map-link {
-        margin-top: 10px;
-        padding: 7px 10px;
-        font-size: 10px;
-        letter-spacing: 0.06em;
+        min-height: 40px;
+        margin-top: 12px;
+        padding: 8px 16px;
+        font-size: 13px;
+        letter-spacing: 0.12em;
+      }
+
+      .parking-note {
+        margin-top: 9px;
+        font-size: 11px;
       }
 
       .footer-copy {
@@ -602,8 +639,11 @@
       }
 
       .venue-layout {
-        grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-        gap: 9px;
+        grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+      }
+
+      .venue-details {
+        padding: 18px 7px;
       }
 
       .venue-hall {
@@ -619,8 +659,13 @@
       }
 
       .map-link {
-        padding: 6px 7px;
-        font-size: 9px;
+        min-height: 36px;
+        padding: 7px 12px;
+        font-size: 12px;
+      }
+
+      .parking-note {
+        font-size: 10px;
       }
     }
 
@@ -672,20 +717,20 @@
       </div>
     </section>
 
-    <!-- 03｜婚紗照片 -->
+    <!-- 03｜兩張戶外婚紗照 -->
     <section class="gallery" aria-label="Our Wedding Photos">
       <div class="gallery-grid">
         <img
           class="gallery-image"
           src="A260820-216.jpeg"
-          alt="新人婚紗合照"
+          alt="新人戶外婚紗照一"
           loading="lazy"
         >
 
         <img
           class="gallery-image"
           src="A260820-94.jpeg"
-          alt="新人婚紗照片"
+          alt="新人戶外婚紗照二"
           loading="lazy"
         >
       </div>
@@ -750,16 +795,16 @@
 
             <p class="info-line">12.25.2026（星期五）</p>
             <p class="info-line">中午 12:00 入席</p>
-            <p class="info-line address">桃園市蘆竹區正興里中正北路326號3樓</p>
+            <p class="info-line address">桃園市蘆竹區正興里中正北路326號</p>
 
             <a
               class="map-link"
               href="https://www.google.com/maps/dir/?api=1&amp;destination=%E9%9D%92%E9%9D%92%E9%A2%A8%E8%BB%8A%E8%8E%8A%E5%9C%92"
               target="_blank"
               rel="noopener noreferrer"
-            >
-              GET DIRECTIONS
-            </a>
+            >導航</a>
+
+            <p class="parking-note">*會場附設停車場</p>
           </div>
         </div>
       </div>
@@ -780,7 +825,7 @@
       </div>
     </section>
 
-    <!-- 07｜最後一張照片 -->
+    <!-- 07｜最後一張滿版照片 -->
     <section class="final-photo" aria-label="A Day to Remember">
       <img
         src="A260820-75.jpeg"
