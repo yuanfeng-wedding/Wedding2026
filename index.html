@@ -6,11 +6,9 @@
   <meta name="theme-color" content="#f8f4ef">
   <meta name="description" content="郭柏峰與張原榆的婚禮邀請函，誠摯邀請您一同分享幸福時刻。">
   <title>郭柏峰 & 張原榆｜Wedding Invitation</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Serif+TC:wght@400;500;600&display=swap" rel="stylesheet">
-
   <style>
     :root {
       --cream: #f8f4ef;
@@ -21,16 +19,13 @@
       --line: #e4d6c8;
       --deep-brown: #3f332c;
     }
-
     * {
       box-sizing: border-box;
     }
-
     html {
       scroll-behavior: smooth;
       scroll-padding-top: 20px;
     }
-
     body {
       margin: 0;
       color: var(--brown);
@@ -40,74 +35,38 @@
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
-
     img {
       display: block;
       max-width: 100%;
     }
-
     a {
       color: inherit;
     }
-
-    /* 共用區塊標題 */
-    .section-label {
-      margin-bottom: 16px;
-      color: var(--gold);
+    .eyebrow,
+    .section-label,
+    .hero-date,
+    .hero-subtitle,
+    .count-label,
+    .event-label,
+    .footer {
       font-family: "Cormorant Garamond", serif;
-      font-size: 13px;
-      letter-spacing: 4px;
       text-transform: uppercase;
     }
-
-    .section-title {
-      margin: 0;
-      color: var(--deep-brown);
-      font-family: "Noto Serif TC", serif;
-      font-size: 40px;
-      font-weight: 400;
-      letter-spacing: .10em;
-      line-height: 1.5;
-    }
-
-    .section-copy {
-      max-width: 560px;
-      margin: 28px auto 0;
-      color: #6f5d51;
-      font-size: 15px;
-      font-weight: 400;
-      line-height: 2.5;
-      letter-spacing: .06em;
-      overflow-wrap: break-word;
-    }
-
-    .divider {
-      width: 54px;
-      margin: 25px auto;
-      border: 0;
-      border-top: 1px solid var(--gold);
-    }
-
-    section {
-      padding: 82px 24px;
-    }
-
-    /* 首頁 */
+    /* 首頁主視覺 */
     .hero {
       position: relative;
+      min-height: max(680px, 100svh);
       display: flex;
-      min-height: 100svh;
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
-      padding: 70px clamp(32px, 9vw, 130px);
+      padding: 56px clamp(28px, 8vw, 120px);
       overflow: hidden;
       isolation: isolate;
-      color: #fff8ee;
       text-align: left;
       background: var(--deep-brown);
+      color: #fff8ee;
     }
-
     .hero-photo {
       position: absolute;
       inset: 0;
@@ -115,494 +74,407 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center 48%;
+      object-position: center 52%;
     }
-
     .hero::before {
+      content: "";
       position: absolute;
       inset: 0;
       z-index: -1;
-      content: "";
       background: linear-gradient(
         90deg,
-        rgba(38, 27, 22, .76) 0%,
-        rgba(38, 27, 22, .57) 28%,
-        rgba(38, 27, 22, .20) 57%,
+        rgba(38, 27, 22, .62) 0%,
+        rgba(38, 27, 22, .42) 35%,
+        rgba(38, 27, 22, .10) 72%,
         rgba(38, 27, 22, .04) 100%
       );
       pointer-events: none;
     }
-
     .hero::after {
+      content: "";
       position: absolute;
       inset: 22px;
-      z-index: -1;
       border: 1px solid rgba(231, 197, 148, .65);
-      content: "";
       pointer-events: none;
+      z-index: -1;
     }
-
     .hero .eyebrow {
-      margin-bottom: 24px;
-      color: #f1d7ad;
-      font-family: "Cormorant Garamond", serif;
       font-size: 13px;
-      letter-spacing: 6px;
-      text-transform: uppercase;
+      letter-spacing: 5px;
+      color: #f1d7ad;
+      margin: 0 0 24px;
     }
-
-    .names {
+    .hero .names {
       margin: 0;
-      color: #fff8ee;
-      font-family: "Noto Serif TC", serif;
+      font-family: "Noto Serif TC", "Songti TC", serif;
       font-size: clamp(35px, 5vw, 62px);
       font-weight: 400;
-      letter-spacing: .12em;
-      line-height: 1.5;
+      letter-spacing: clamp(4px, 1vw, 10px);
+      line-height: 1.45;
+      color: #fff8ee;
       text-shadow: 0 2px 18px rgba(0, 0, 0, .22);
     }
-
-    .ampersand {
-      margin: 2px 0 5px 5px;
+    .hero .ampersand {
       color: #d9b17b;
       font-family: "Cormorant Garamond", serif;
       font-size: 38px;
+      font-weight: 400;
       font-style: italic;
-      line-height: 1.2;
+      line-height: 1.15;
+      margin: 4px 0 8px 5px;
     }
-
-    .hero .divider {
-      margin: 26px 0 20px;
-      border-color: #d9b17b;
+    .hero-divider {
+      width: 70px;
+      border: 0;
+      border-top: 1px solid #d9b17b;
+      margin: 27px 0 20px;
     }
-
     .hero-date {
-      color: #fff8ee;
-      font-family: "Cormorant Garamond", serif;
-      font-size: 23px;
+      font-size: clamp(20px, 2.5vw, 27px);
       letter-spacing: 4px;
+      color: #fff8ee;
     }
-
     .hero-subtitle {
       margin-top: 12px;
-      color: #f1d7ad;
-      font-family: "Cormorant Garamond", serif;
       font-size: 13px;
       letter-spacing: 3px;
-      text-transform: uppercase;
+      color: #f1d7ad;
     }
-
     .hero-message {
-      margin: 23px 0 0;
-      color: #fff8ee;
+      margin: 22px 0 0;
       font-size: 14px;
-      line-height: 2.4;
-      letter-spacing: .10em;
+      line-height: 2.3;
+      letter-spacing: 1.5px;
+      color: #fff8ee;
     }
-
     .scroll-link {
       margin-top: 30px;
-      color: #f1d7ad;
       font-family: "Cormorant Garamond", serif;
       font-size: 12px;
       letter-spacing: 4px;
       text-decoration: none;
-      text-transform: uppercase;
+      color: #f1d7ad;
     }
-
+    /* 全站區塊標題 */
+    section {
+      padding: 76px 22px;
+    }
+    .section-label {
+      font-size: 13px;
+      color: var(--gold);
+      letter-spacing: 4px;
+      margin-bottom: 14px;
+    }
+    h2 {
+      margin: 0;
+      font-size: clamp(25px, 4vw, 32px);
+      font-weight: 400;
+      letter-spacing: 4px;
+      line-height: 1.6;
+      color: var(--deep-brown);
+    }
+    .intro-text {
+      max-width: 560px;
+      margin: 28px auto 0;
+      font-size: 14px;
+      line-height: 2.5;
+      letter-spacing: 1px;
+      color: #6f5d51;
+    }
     /* 我們的故事 */
-    .story {
+    .intro {
       background: var(--paper);
     }
-
-    .story .section-copy {
-      max-width: 530px;
-    }
-
-    /* 照片區 */
-    .photo-section {
-      padding: 0;
+    /* 婚紗照片 */
+    .photo-gallery {
       background: var(--cream);
-      line-height: 0;
+      padding: 30px 22px 70px;
     }
-
-    .gallery-photo {
+    .photo-grid {
+      max-width: 980px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      align-items: start;
+    }
+    .photo-grid img {
       width: 100%;
-      height: auto;
+      height: 460px;
       object-fit: cover;
+      object-position: center;
     }
-
+    .photo-grid img:first-child {
+      margin-top: 36px;
+    }
+    .photo-last {
+      background: var(--paper);
+      padding: 24px 22px 70px;
+    }
+    .photo-last img {
+      width: min(100%, 720px);
+      max-height: 600px;
+      object-fit: cover;
+      object-position: center;
+      margin: 0 auto;
+    }
     /* 幸福倒數 */
     .countdown-section {
       background: #eee3d8;
     }
-
     .countdown-date {
-      margin-top: 20px;
-      color: var(--muted);
-      font-size: 15px;
+      margin: 16px auto 0;
+      font-size: 14px;
+      letter-spacing: 1px;
       line-height: 1.9;
-      letter-spacing: .08em;
+      color: var(--muted);
     }
-
     .countdown {
       display: flex;
       justify-content: center;
-      gap: clamp(12px, 4.5vw, 30px);
+      gap: clamp(12px, 4.5vw, 32px);
       margin: 38px auto 0;
     }
-
     .count-item {
-      min-width: 55px;
+      min-width: 54px;
     }
-
     .count-number {
-      color: var(--deep-brown);
       font-family: "Cormorant Garamond", serif;
       font-size: clamp(32px, 7vw, 46px);
       font-weight: 400;
       line-height: 1.2;
       font-variant-numeric: tabular-nums;
+      color: var(--deep-brown);
     }
-
     .count-label {
-      margin-top: 8px;
-      color: var(--muted);
-      font-family: "Cormorant Garamond", serif;
+      font-family: "Noto Serif TC", "Songti TC", serif;
+      text-transform: none;
       font-size: 12px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+      color: var(--muted);
+      letter-spacing: 1px;
+      margin-top: 8px;
+      white-space: nowrap;
     }
-
-    /* 婚禮資訊 */
+    /* 婚禮資訊卡 */
     .event-section {
       background: var(--cream);
     }
-
-    .event-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      max-width: 1000px;
-      margin: 45px auto 0;
-      border: 1px solid var(--line);
+    .event-card {
+      max-width: 560px;
+      margin: 36px auto 0;
+      padding: 36px clamp(20px, 5vw, 42px);
       background: var(--paper);
-      text-align: left;
+      border: 1px solid var(--line);
+      outline: 1px solid var(--line);
+      outline-offset: 5px;
+      text-align: center;
     }
-
-    .venue-photo-wrap {
-      min-height: 100%;
-      overflow: hidden;
-      background: #e8ddd2;
-    }
-
-    .venue-photo {
-      width: 100%;
-      height: 100%;
-      min-height: 420px;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    .event-content {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 38px 34px;
-    }
-
     .venue-name {
+      font-size: 21px;
+      line-height: 1.9;
+      letter-spacing: 2px;
       margin: 0 0 25px;
       color: var(--deep-brown);
-      font-size: 22px;
-      font-weight: 400;
-      line-height: 1.8;
-      letter-spacing: .06em;
     }
-
+    .venue-photo {
+      width: 100%;
+      max-height: 280px;
+      object-fit: cover;
+      object-position: center;
+      margin: 0 auto 24px;
+    }
     .event-row {
       padding: 17px 0;
       border-top: 1px solid var(--line);
     }
-
     .event-label {
       display: block;
-      margin-bottom: 8px;
-      color: var(--muted);
-      font-family: "Cormorant Garamond", serif;
       font-size: 12px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+      color: var(--muted);
+      letter-spacing: 3px;
+      margin-bottom: 8px;
     }
-
     .event-value {
-      color: var(--brown);
-      font-size: 14px;
+      font-size: 15px;
       line-height: 2;
-      letter-spacing: .03em;
-      overflow-wrap: break-word;
+      letter-spacing: .4px;
+      overflow-wrap: anywhere;
     }
-
-    .address {
-      overflow-wrap: normal;
-      word-break: normal;
+    .event-note {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 2.3;
+      margin: 24px 0 0;
+      letter-spacing: .8px;
     }
-
     .map-button {
       display: inline-block;
-      align-self: flex-start;
-      margin-top: 22px;
-      padding: 13px 20px;
+      margin-top: 24px;
+      padding: 14px 25px;
       border: 1px solid var(--gold);
-      color: var(--brown);
-      font-size: 12px;
-      letter-spacing: .08em;
       text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 2px;
+      color: var(--brown);
       transition: background .2s, color .2s;
     }
-
     .map-button:hover {
-      color: white;
       background: var(--gold);
+      color: white;
     }
-
     /* 幸福相聚 */
     .together-section {
       background: var(--paper);
     }
-
-    .together-section .section-copy {
-      max-width: 570px;
+    .together-section .intro-text {
+      max-width: 520px;
     }
-
-    /* 頁尾 */
+    /* 結尾 */
     .closing {
-      padding: 75px 24px 55px;
       background: #eee3d8;
+      padding: 76px 24px;
     }
-
     .closing-names {
-      margin-top: 30px;
+      margin-top: 28px;
+      font-size: 20px;
+      letter-spacing: 3px;
       color: var(--deep-brown);
-      font-family: "Cormorant Garamond", serif;
-      font-size: 24px;
-      letter-spacing: 4px;
     }
-
-    .closing-date {
-      margin-top: 20px;
-      color: var(--deep-brown);
-      font-family: "Cormorant Garamond", serif;
-      font-size: 19px;
-      letter-spacing: 4px;
-    }
-
     .gift-note {
-      max-width: 460px;
+      max-width: 440px;
       margin: 32px auto 0;
       padding: 25px 12px;
       border-top: 1px solid #d9c5b2;
-      color: #796658;
       font-size: 14px;
       line-height: 2.5;
-      letter-spacing: .06em;
+      letter-spacing: 1px;
+      color: #796658;
     }
-
-    .footer {
-      padding: 24px 12px;
-      color: #f8f4ef;
-      background: var(--deep-brown);
+    .closing-divider {
+      width: 54px;
+      border: 0;
+      border-top: 1px solid var(--gold);
+      margin: 28px auto;
+    }
+    .closing-date {
       font-family: "Cormorant Garamond", serif;
-      font-size: 12px;
+      font-size: 18px;
       letter-spacing: 4px;
-      text-transform: uppercase;
+      color: var(--deep-brown);
     }
-
-    /* 手機版 */
-    @media (max-width: 700px) {
+    .footer {
+      padding: 26px 12px;
+      background: var(--deep-brown);
+      color: #f8f4ef;
+      font-size: 12px;
+      letter-spacing: 3px;
+    }
+    @media (max-width: 600px) {
       section {
-        padding: 65px 22px;
+        padding: 60px 22px;
       }
-
-      .section-title {
-        font-size: 32px;
-      }
-
-      .section-copy {
-        margin-top: 24px;
-        font-size: 14px;
-        line-height: 2.4;
-      }
-
       .hero {
         min-height: 100svh;
-        padding: 55px 30px;
+        padding: 50px 30px;
       }
-
       .hero-photo {
         object-position: 58% center;
       }
-
       .hero::before {
         background: linear-gradient(
           90deg,
-          rgba(38, 27, 22, .76) 0%,
-          rgba(38, 27, 22, .52) 45%,
-          rgba(38, 27, 22, .18) 100%
+          rgba(38, 27, 22, .58) 0%,
+          rgba(38, 27, 22, .32) 58%,
+          rgba(38, 27, 22, .08) 100%
         );
       }
-
-      .hero::after {
-        inset: 15px;
+      .hero .names {
+        font-size: clamp(34px, 9vw, 46px);
       }
-
       .hero .eyebrow {
         font-size: 11px;
         letter-spacing: 4px;
       }
-
-      .names {
-        font-size: clamp(34px, 9vw, 46px);
-        letter-spacing: .10em;
-      }
-
       .hero-date {
         font-size: 20px;
         letter-spacing: 3px;
       }
-
       .hero-message {
         font-size: 13px;
       }
-
-      .countdown {
-        gap: clamp(9px, 3vw, 18px);
-        margin-top: 30px;
+      h2 {
+        font-size: 27px;
+        letter-spacing: 3px;
       }
-
+      .photo-gallery {
+        padding: 20px 18px 50px;
+      }
+      .photo-grid {
+        gap: 12px;
+      }
+      .photo-grid img {
+        height: 270px;
+      }
+      .photo-grid img:first-child {
+        margin-top: 22px;
+      }
+      .photo-last {
+        padding: 16px 18px 50px;
+      }
+      .venue-name {
+        font-size: 19px;
+      }
+      .event-card {
+        padding: 30px 20px;
+      }
+      .event-value {
+        font-size: 14px;
+      }
+      .countdown {
+        gap: 10px;
+      }
       .count-item {
         min-width: 48px;
       }
-
       .count-number {
-        font-size: clamp(29px, 8vw, 38px);
+        font-size: 30px;
       }
-
       .count-label {
-        font-size: 10px;
-        letter-spacing: 1px;
-      }
-
-      .countdown-date {
-        font-size: 14px;
-      }
-
-      .event-layout {
-        grid-template-columns: 33% 67%;
-        margin-top: 35px;
-      }
-
-      .venue-photo {
-        min-height: 100%;
-        height: 100%;
-        object-position: center;
-      }
-
-      .event-content {
-        padding: 26px 16px;
-      }
-
-      .venue-name {
-        font-size: 17px;
-        line-height: 1.8;
-        letter-spacing: .02em;
-        margin-bottom: 18px;
-      }
-
-      .event-row {
-        padding: 13px 0;
-      }
-
-      .event-label {
-        font-size: 11px;
-        letter-spacing: 1px;
-      }
-
-      .event-value {
-        font-size: 13px;
-        line-height: 1.9;
-        letter-spacing: 0;
-      }
-
-      .map-button {
-        align-self: stretch;
-        padding: 12px 8px;
-        text-align: center;
         font-size: 11px;
         letter-spacing: 0;
-      }
-
-      .closing {
-        padding: 60px 20px 45px;
-      }
-
-      .closing-names {
-        font-size: 20px;
-        letter-spacing: 3px;
-      }
-
-      .closing-date {
-        font-size: 18px;
-        letter-spacing: 3px;
-      }
-
-      .gift-note {
-        font-size: 13px;
       }
     }
-
     @media (max-width: 380px) {
-      .section-title {
-        font-size: 29px;
-      }
-
       .hero {
         padding-left: 25px;
         padding-right: 25px;
       }
-
-      .hero .eyebrow {
-        letter-spacing: 3px;
+      .hero::after {
+        inset: 14px;
       }
-
+      .photo-grid img {
+        height: 230px;
+      }
       .countdown {
         gap: 7px;
       }
-
       .count-item {
         min-width: 43px;
       }
-
       .count-number {
         font-size: 27px;
       }
-
-      .event-layout {
-        grid-template-columns: 31% 69%;
+      .count-label {
+        font-size: 10px;
       }
-
-      .event-content {
-        padding: 22px 12px;
+      .countdown-date {
+        font-size: 13px;
       }
-
-      .venue-name {
-        font-size: 15px;
-      }
-
-      .event-value {
-        font-size: 12px;
+      section {
+        padding-left: 18px;
+        padding-right: 18px;
       }
     }
-
     @media (prefers-reduced-motion: reduce) {
       html {
         scroll-behavior: auto;
@@ -610,212 +482,177 @@
     }
   </style>
 </head>
-
 <body>
   <main>
-
-    <!-- 首頁 -->
+    <!-- 首頁主視覺 -->
     <header class="hero">
       <img
         class="hero-photo"
         src="A260820-74.JPEG"
-        alt="郭柏峰與張原榆的婚紗照"
+        alt="郭柏峰與張原榆的原始婚紗照"
       >
-
       <div class="eyebrow">WEDDING INVITATION</div>
-
       <h1 class="names">郭柏峰</h1>
       <div class="ampersand">&amp;</div>
       <h1 class="names">張原榆</h1>
-
-      <hr class="divider">
-
+      <hr class="hero-divider">
       <div class="hero-date">12.25.2026</div>
       <div class="hero-subtitle">FRIDAY · 12:00 PM</div>
-
       <p class="hero-message">
         在歲末的溫柔時光裡，<br>
         邀請您一同見證我們的幸福。
       </p>
-
-      <a class="scroll-link" href="#story">SCROLL TO EXPLORE ↓</a>
+      <a class="scroll-link" href="#invitation">SCROLL TO EXPLORE ↓</a>
     </header>
-
     <!-- 我們的故事 -->
-    <section class="story" id="story">
+    <section class="intro" id="invitation">
       <div class="section-label">OUR STORY</div>
-      <h2 class="section-title">我們的故事</h2>
-
-      <p class="section-copy">
+      <h2>我們的故事</h2>
+      <p class="intro-text">
         從相識到相愛，一路走來經歷了許多難忘的點滴，也讓我們更加珍惜彼此。期待未來的日子裡，還能一起寫下更多屬於我們的故事。
       </p>
     </section>
-
-    <!-- 正式服裝照片 -->
-    <section class="photo-section" aria-label="婚紗照片">
-      <img
-        class="gallery-photo"
-        src="A260820-216.jpeg"
-        alt="郭柏峰與張原榆身穿正式服裝的婚紗照"
-        loading="lazy"
-      >
+    <!-- 婚紗照片 -->
+    <section class="photo-gallery" aria-label="Wedding photos">
+      <div class="photo-grid">
+        <img
+          src="A260820-216.jpeg"
+          alt="兩人的正式婚紗照片"
+          loading="lazy"
+        >
+        <img
+          src="A260820-94.jpeg"
+          alt="兩人牽手的戶外婚紗照片"
+          loading="lazy"
+        >
+      </div>
     </section>
-
-    <!-- 戶外牽手照片 -->
-    <section class="photo-section" aria-label="戶外婚紗照片">
-      <img
-        class="gallery-photo"
-        src="A260820-94.jpeg"
-        alt="郭柏峰與張原榆戶外牽手的婚紗照"
-        loading="lazy"
-      >
-    </section>
-
     <!-- 幸福倒數 -->
     <section class="countdown-section" id="countdown-section">
-      <div class="section-label">COUNTING DOWN</div>
-      <h2 class="section-title">幸福倒數</h2>
-
+      <div class="section-label">SAVE THE DATE</div>
+      <h2>幸福倒數</h2>
       <p class="countdown-date">2026 年 12 月 25 日・星期五</p>
-
       <div class="countdown" id="countdown" aria-live="polite">
         <div class="count-item">
           <div class="count-number" id="days">--</div>
-          <div class="count-label">Days</div>
+          <div class="count-label">天</div>
         </div>
-
         <div class="count-item">
           <div class="count-number" id="hours">--</div>
-          <div class="count-label">Hours</div>
+          <div class="count-label">小時</div>
         </div>
-
         <div class="count-item">
           <div class="count-number" id="minutes">--</div>
-          <div class="count-label">Minutes</div>
+          <div class="count-label">分鐘</div>
         </div>
-
         <div class="count-item">
           <div class="count-number" id="seconds">--</div>
-          <div class="count-label">Seconds</div>
+          <div class="count-label">秒數</div>
         </div>
       </div>
     </section>
-
     <!-- 婚禮資訊 -->
     <section class="event-section" id="details">
-      <div class="section-label">THE WEDDING DETAILS</div>
-      <h2 class="section-title">婚禮資訊</h2>
-
-      <div class="event-layout">
-        <div class="venue-photo-wrap">
-          <img
-            class="venue-photo"
-            src="venue.png"
-            alt="青青風車莊園婚宴場地"
-            loading="lazy"
-          >
+      <div class="section-label">THE CELEBRATION</div>
+      <h2>婚禮資訊</h2>
+      <div class="event-card">
+        <p class="venue-name">青青風車莊園【巴洛克廳】</p>
+        <img
+          class="venue-photo"
+          src="venue.png"
+          alt="婚禮場地環境照片"
+          loading="lazy"
+          onerror="this.style.display='none'"
+        >
+        <div class="event-row">
+          <span class="event-label">DATE</span>
+          <div class="event-value">2026 年 12 月 25 日（星期五）</div>
         </div>
-
-        <div class="event-content">
-          <h3 class="venue-name">青青風車莊園【巴洛克廳】</h3>
-
-          <div class="event-row">
-            <span class="event-label">DATE · 日期</span>
-            <div class="event-value">2026 年 12 月 25 日（星期五）</div>
-          </div>
-
-          <div class="event-row">
-            <span class="event-label">TIME · 時間</span>
-            <div class="event-value">中午 12:00 入席</div>
-          </div>
-
-          <div class="event-row">
-            <span class="event-label">ADDRESS · 地址</span>
-            <div class="event-value address">桃園市蘆竹區正興里中正北路326號</div>
-          </div>
-
-          <a
-            class="map-button"
-            href="https://www.google.com/maps/search/?api=1&query=%E6%A1%83%E5%9C%92%E5%B8%82%E8%98%86%E7%AB%B9%E5%8D%80%E6%AD%A3%E8%88%88%E9%87%8C%E4%B8%AD%E6%AD%A3%E5%8C%97%E8%B7%AF326%E8%99%9F"
-            target="_blank"
-            rel="noopener noreferrer"
-          >開啟 Google Maps 導航 ↗</a>
+        <div class="event-row">
+          <span class="event-label">TIME</span>
+          <div class="event-value">中午 12:00 入席</div>
         </div>
+        <div class="event-row">
+          <span class="event-label">VENUE</span>
+          <div class="event-value">青青風車莊園【巴洛克廳】</div>
+        </div>
+        <div class="event-row">
+          <span class="event-label">ADDRESS</span>
+          <div class="event-value">桃園市蘆竹區正興里中正北路326號</div>
+        </div>
+        <p class="event-note">
+          期待與您相聚，<br>
+          共享這個值得紀念的日子。
+        </p>
+        <a
+          class="map-button"
+          href="https://www.google.com/maps/search/?api=1&query=%E9%9D%92%E9%9D%92%E9%A2%A8%E8%BB%8A%E8%8E%8A%E5%9C%92%20%E6%A1%83%E5%9C%92%E5%B8%82%E8%98%86%E7%AB%B9%E5%8D%80%E6%AD%A3%E8%88%88%E9%87%8C%E4%B8%AD%E6%AD%A3%E5%8C%97%E8%B7%AF326%E8%99%9F"
+          target="_blank"
+          rel="noopener noreferrer"
+        >開啟 Google Maps 導航 ↗</a>
       </div>
     </section>
-
     <!-- 幸福相聚 -->
-    <section class="together-section" id="together">
+    <section class="together-section">
       <div class="section-label">A DAY TO REMEMBER</div>
-      <h2 class="section-title">幸福相聚</h2>
-
-      <p class="section-copy">
+      <h2>幸福相聚</h2>
+      <p class="intro-text">
         對我們而言，這一天有著特別的意義。因為有你們的陪伴，這份幸福才更加完整。希望能與重要的你們一同度過，留下值得珍藏的美好回憶。
       </p>
     </section>
-
-    <!-- 最後一張照片 -->
-    <section class="photo-section" aria-label="婚紗照片">
+    <!-- 最後一張原始照片 -->
+    <section class="photo-last" aria-label="Wedding memory">
       <img
-        class="gallery-photo"
         src="A260820-75.jpeg"
-        alt="郭柏峰與張原榆的婚紗照片"
+        alt="郭柏峰與張原榆的婚紗照"
         loading="lazy"
       >
     </section>
-
-    <!-- 頁尾 -->
+    <!-- 結尾與邀請 -->
     <section class="closing">
-      <div class="section-label">WITH LOVE AND GRATITUDE</div>
-
-      <div class="closing-names">KUO &amp; CHANG</div>
-      <div class="closing-date">12.25.2026</div>
-
+      <div class="section-label">SEE YOU THERE</div>
+      <h2>期待與您相見</h2>
+      <p class="intro-text">
+        感謝您成為我們生命中的美好風景。<br>
+        期待在這個特別的日子裡，<br>
+        與您分享幸福與感動。
+      </p>
+      <div class="closing-names">郭柏峰 &amp; 張原榆</div>
       <p class="gift-note">
         您的祝福就是最好的禮物，宴席不收禮金，<br>
         誠摯邀請您前來共享喜悅。
       </p>
+      <hr class="closing-divider">
+      <div class="closing-date">12.25.2026</div>
     </section>
-
   </main>
-
-  <footer class="footer">
-    WITH LOVE · KUO &amp; CHANG
-  </footer>
-
+  <footer class="footer">KUO &amp; CHANG · 12.25.2026</footer>
   <script>
     (function () {
       // 婚禮時間：台灣時間 2026 年 12 月 25 日中午 12:00
-      const weddingTime = new Date(
-        "2026-12-25T12:00:00+08:00"
-      ).getTime();
-
+      const weddingTime =
+        new Date("2026-12-25T12:00:00+08:00").getTime();
       const daysEl = document.getElementById("days");
       const hoursEl = document.getElementById("hours");
       const minutesEl = document.getElementById("minutes");
       const secondsEl = document.getElementById("seconds");
       const countdownEl = document.getElementById("countdown");
-
       function updateCountdown() {
         const remaining = weddingTime - Date.now();
-
         if (remaining <= 0) {
           countdownEl.innerHTML =
-            '<p class="section-copy">今天是值得紀念的日子，祝福滿滿！</p>';
+            "<p>今天是值得紀念的日子，祝福滿滿！</p>";
           return;
         }
-
         const days = Math.floor(remaining / 86400000);
         const hours = Math.floor((remaining % 86400000) / 3600000);
         const minutes = Math.floor((remaining % 3600000) / 60000);
         const seconds = Math.floor((remaining % 60000) / 1000);
-
         daysEl.textContent = String(days).padStart(2, "0");
         hoursEl.textContent = String(hours).padStart(2, "0");
         minutesEl.textContent = String(minutes).padStart(2, "0");
         secondsEl.textContent = String(seconds).padStart(2, "0");
       }
-
       updateCountdown();
       window.setInterval(updateCountdown, 1000);
     })();
