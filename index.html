@@ -239,31 +239,32 @@
       letter-spacing: .10em;
     }
 
-    /* 03｜婚紗照：桌機並排、手機上下 */
+    /* 03｜婚紗照：保留原始比例，不裁切 */
     .gallery {
       padding: 0;
       background: var(--cream);
     }
 
+    /* 電腦版兩張並排，各佔一半 */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 0;
       width: 100%;
+      align-items: start;
     }
 
     .gallery-photo {
       width: 100%;
-      aspect-ratio: 3 / 4;
       overflow: hidden;
-      background: #e9e0d5;
+      background: var(--cream);
     }
 
     .gallery-photo img {
       display: block;
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
+      object-fit: contain;
       object-position: center;
     }
 
@@ -448,7 +449,7 @@
       object-fit: contain;
     }
 
-    /* 08｜結尾：維持原樣 */
+    /* 08｜結尾 */
     .closing {
       padding: 68px var(--side) 52px;
       background: var(--cream);
@@ -560,16 +561,20 @@
         letter-spacing: .04em;
       }
 
-      /* 手機照片上下排列 */
+      /* 手機版：兩張照片上下排列，保持完整原始比例 */
       .gallery-grid {
         grid-template-columns: 1fr;
       }
 
       .gallery-photo {
-        aspect-ratio: 4 / 3;
+        width: 100%;
+        aspect-ratio: auto;
       }
 
       .gallery-photo img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
         object-position: center;
       }
 
@@ -599,7 +604,7 @@
         font-size: 12px;
       }
 
-      /* 手機婚禮資訊：照片與文字採較平衡比例 */
+      /* 手機婚禮資訊 */
       .info-layout {
         grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
         min-height: 0;
@@ -780,7 +785,7 @@
       </div>
     </section>
 
-    <!-- 03｜婚紗照：桌機並排、手機上下 -->
+    <!-- 03｜婚紗照 -->
     <section class="gallery" aria-label="婚紗照片">
       <div class="gallery-grid">
         <figure class="gallery-photo">
@@ -897,7 +902,7 @@
       </figure>
     </section>
 
-    <!-- 08｜結尾：維持原樣 -->
+    <!-- 08｜結尾 -->
     <footer class="closing">
       <div class="inner">
         <p class="closing-message">
