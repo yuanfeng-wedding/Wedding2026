@@ -10,7 +10,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Noto+Sans+TC:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -54,14 +54,14 @@
       letter-spacing: 0.16em;
     }
 
-    /* 首頁 */
+    /* 首頁：文字置於照片上方，全部粗體 */
     .hero {
       position: relative;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: center;
       min-height: 100svh;
-      padding: 60px 24px;
+      padding: 7vh 24px 40px;
       overflow: hidden;
       text-align: center;
       background: #75685d;
@@ -82,24 +82,25 @@
       width: 100%;
       max-width: 900px;
       color: var(--ivory);
+      font-weight: 700;
       text-shadow:
-        0 1px 2px rgba(35, 27, 22, 0.65),
-        0 3px 8px rgba(35, 27, 22, 0.55),
-        0 6px 16px rgba(35, 27, 22, 0.35);
+        0 1px 2px rgba(35, 27, 22, 0.75),
+        0 3px 8px rgba(35, 27, 22, 0.65),
+        0 6px 16px rgba(35, 27, 22, 0.45);
     }
 
     .hero-label {
-      margin: 0 0 34px;
+      margin: 0 0 30px;
       font-family: "Montserrat", sans-serif;
       font-size: 13px;
-      font-weight: 500;
+      font-weight: 700;
       letter-spacing: 0.28em;
     }
 
     .couple-names {
       margin: 0;
       font-size: clamp(27px, 5vw, 43px);
-      font-weight: 300;
+      font-weight: 700;
       letter-spacing: 0.12em;
       line-height: 1.8;
     }
@@ -108,13 +109,13 @@
       display: inline-block;
       margin: 0 10px;
       font-family: "Montserrat", sans-serif;
-      font-weight: 300;
+      font-weight: 700;
     }
 
     .hero-divider {
       width: 44px;
       height: 1px;
-      margin: 27px auto;
+      margin: 24px auto;
       background: var(--ivory);
       opacity: 0.9;
     }
@@ -123,14 +124,14 @@
       margin: 0;
       font-family: "Montserrat", sans-serif;
       font-size: 17px;
-      font-weight: 400;
+      font-weight: 700;
       letter-spacing: 0.2em;
     }
 
     .hero-time {
       margin: 8px 0 0;
       font-size: 15px;
-      font-weight: 300;
+      font-weight: 700;
       letter-spacing: 0.12em;
     }
 
@@ -387,7 +388,7 @@
 
       .hero {
         min-height: 100svh;
-        padding: 48px 20px;
+        padding: 6vh 20px 35px;
       }
 
       .hero-image {
@@ -395,7 +396,7 @@
       }
 
       .hero-label {
-        margin-bottom: 28px;
+        margin-bottom: 24px;
         font-size: 11px;
         letter-spacing: 0.22em;
       }
@@ -410,7 +411,7 @@
       }
 
       .hero-divider {
-        margin: 22px auto;
+        margin: 20px auto;
       }
 
       .hero-date {
@@ -506,7 +507,6 @@
         letter-spacing: 0.04em;
       }
 
-      /* 日期、時間、地址統一與手機內文同為 15px */
       .venue-detail {
         margin-bottom: 10px;
         font-size: 15px;
