@@ -3,113 +3,491 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8f4ef">
+  <meta name="description" content="郭柏峰與張原榆的婚禮邀請函，誠摯邀請您一同分享幸福時刻。">
   <title>郭柏峰 & 張原榆｜Wedding Invitation</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600&display=swap" rel="stylesheet">
+
   <style>
+    :root {
+      --cream: #f8f4ef;
+      --paper: #fffdf9;
+      --brown: #51463f;
+      --muted: #8c786a;
+      --gold: #b18b72;
+      --line: #e4d6c8;
+    }
+
     * {
       box-sizing: border-box;
     }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: "Noto Serif TC", "Times New Roman", serif;
-      color: #51463f;
-      background: #f8f4ef;
+      color: var(--brown);
+      background: var(--cream);
+      font-family: "Noto Serif TC", serif;
       text-align: center;
+      -webkit-font-smoothing: antialiased;
     }
+
+    a {
+      color: inherit;
+    }
+
     .hero {
-      min-height: 100vh;
+      position: relative;
+      min-height: 100svh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 40px 24px;
-      background: linear-gradient(180deg, #f8f4ef, #eee3d8);
+      padding: 70px 24px 55px;
+      overflow: hidden;
+      background: radial-gradient(
+        ellipse at 50% 45%,
+        #fffdf9 0%,
+        #f8f4ef 70%
+      );
     }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 170px;
+      height: 170px;
+      border: 1px solid #d9c5b2;
+      border-radius: 50%;
+      opacity: 0.55;
+      pointer-events: none;
+    }
+
+    .hero::before {
+      top: -100px;
+      left: -85px;
+    }
+
+    .hero::after {
+      right: -85px;
+      bottom: -100px;
+    }
+
     .eyebrow {
+      font-size: 11px;
       letter-spacing: 5px;
-      font-size: 12px;
-      margin-bottom: 35px;
+      color: var(--muted);
+      margin-bottom: 38px;
     }
+
     .names {
-      font-size: clamp(30px, 8vw, 44px);
-      line-height: 1.7;
-      letter-spacing: 3px;
       margin: 0;
+      font-size: clamp(32px, 8vw, 45px);
+      font-weight: 400;
+      letter-spacing: 5px;
+      line-height: 1.8;
     }
+
     .ampersand {
-      font-size: 24px;
-      color: #b18b72;
-      margin: 8px 0;
+      color: var(--gold);
+      font-size: 25px;
+      font-style: italic;
+      margin: 0 0 4px;
     }
+
     .divider {
-      width: 55px;
+      width: 48px;
       border: 0;
-      border-top: 1px solid #b18b72;
-      margin: 30px auto;
+      border-top: 1px solid var(--gold);
+      margin: 28px auto;
     }
-    .date {
-      font-size: 17px;
-      letter-spacing: 2px;
-    }
-    .message {
+
+    .hero-date {
       font-size: 15px;
-      line-height: 2.2;
-      margin-top: 35px;
-    }
-    .scroll {
-      margin-top: 45px;
-      font-size: 12px;
       letter-spacing: 3px;
-      color: #8c786a;
     }
+
+    .hero-subtitle {
+      margin-top: 12px;
+      font-size: 13px;
+      letter-spacing: 2px;
+      color: var(--muted);
+    }
+
+    .hero-message {
+      margin-top: 30px;
+      font-size: 14px;
+      line-height: 2.3;
+      letter-spacing: 1px;
+    }
+
+    .scroll-link {
+      margin-top: 38px;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-decoration: none;
+      color: var(--muted);
+    }
+
     section {
-      padding: 65px 24px;
-      line-height: 2;
+      padding: 76px 22px;
     }
+
+    .section-label {
+      font-size: 10px;
+      color: var(--gold);
+      letter-spacing: 4px;
+      margin-bottom: 12px;
+    }
+
     h2 {
-      font-size: 22px;
-      font-weight: normal;
+      margin: 0;
+      font-size: 23px;
+      font-weight: 400;
       letter-spacing: 3px;
     }
-    .footer {
-      padding: 30px 15px;
-      background: #e9ddd1;
+
+    .intro {
+      background: var(--paper);
+    }
+
+    .intro-text {
+      max-width: 340px;
+      margin: 28px auto 0;
+      font-size: 14px;
+      line-height: 2.5;
+      letter-spacing: 1px;
+    }
+
+    .countdown-section {
+      background: #eee3d8;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: clamp(12px, 5vw, 28px);
+      margin: 35px auto 0;
+    }
+
+    .count-item {
+      min-width: 55px;
+    }
+
+    .count-number {
+      font-size: clamp(28px, 7vw, 38px);
+      font-weight: 400;
+      line-height: 1.4;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .count-label {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 2px;
+      margin-top: 7px;
+    }
+
+    .event-section {
+      background: var(--cream);
+    }
+
+    .event-card {
+      max-width: 420px;
+      margin: 32px auto 0;
+      padding: 35px 22px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      outline: 1px solid var(--line);
+      outline-offset: 5px;
+    }
+
+    .venue-name {
+      font-size: 21px;
+      line-height: 1.8;
+      letter-spacing: 1px;
+      margin: 0 0 26px;
+    }
+
+    .event-row {
+      padding: 15px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .event-label {
+      display: block;
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 3px;
+      margin-bottom: 7px;
+    }
+
+    .event-value {
+      font-size: 15px;
+      line-height: 1.9;
+      overflow-wrap: anywhere;
+    }
+
+    .event-note {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 2;
+      margin-top: 22px;
+    }
+
+    .map-button {
+      display: inline-block;
+      margin-top: 22px;
+      padding: 13px 26px;
+      border: 1px solid var(--gold);
+      text-decoration: none;
       font-size: 12px;
       letter-spacing: 2px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .map-button:hover {
+      background: var(--gold);
+      color: white;
+    }
+
+    .closing {
+      background: #eee3d8;
+      padding: 65px 24px;
+    }
+
+    .closing-names {
+      margin-top: 25px;
+      font-size: 19px;
+      letter-spacing: 3px;
+    }
+
+    .gift-note {
+      max-width: 350px;
+      margin: 30px auto 0;
+      padding: 24px 12px;
+      border-top: 1px solid #d9c5b2;
+      font-size: 13px;
+      line-height: 2.3;
+      letter-spacing: 1px;
+      color: var(--muted);
+    }
+
+    .footer {
+      padding: 25px 12px;
+      background: var(--brown);
+      color: #f8f4ef;
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
+
+    @media (max-width: 360px) {
+      .countdown {
+        gap: 10px;
+      }
+
+      .count-item {
+        min-width: 48px;
+      }
+
+      .count-number {
+        font-size: 26px;
+      }
+
+      .names {
+        letter-spacing: 3px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
     }
   </style>
 </head>
+
 <body>
-  <main class="hero">
-    <div class="eyebrow">WEDDING INVITATION</div>
-    <h1 class="names">郭柏峰</h1>
-    <div class="ampersand">&</div>
-    <h1 class="names">張原榆</h1>
-    <hr class="divider">
-    <div class="date">OUR WEDDING · 2026</div>
-    <p class="message">
-      歡迎與我們一起<br>
-      分享人生中重要的時刻
-    </p>
-    <div class="scroll">SCROLL TO EXPLORE ↓</div>
+  <main>
+    <header class="hero">
+      <div class="eyebrow">WEDDING INVITATION</div>
+
+      <h1 class="names">郭柏峰</h1>
+      <div class="ampersand">&</div>
+      <h1 class="names">張原榆</h1>
+
+      <hr class="divider">
+
+      <div class="hero-date">2026 · 12 · 25</div>
+      <div class="hero-subtitle">FRIDAY · 12:00 PM</div>
+
+      <p class="hero-message">
+        在歲末的溫柔時光裡，<br>
+        邀請您一同見證我們的幸福。
+      </p>
+
+      <a class="scroll-link" href="#invitation">
+        SCROLL TO EXPLORE ↓
+      </a>
+    </header>
+
+    <section class="intro" id="invitation">
+      <div class="section-label">WITH LOVE</div>
+      <h2>親愛的家人與朋友</h2>
+
+      <p class="intro-text">
+        因為相遇，讓兩個人的人生有了交集；<br>
+        因為相伴，讓平凡的日子有了意義。<br>
+        我們即將迎來人生新的篇章，<br>
+        誠摯邀請您與我們分享這份喜悅，<br>
+        一起留下珍貴而美好的回憶。
+      </p>
+    </section>
+
+    <section class="countdown-section">
+      <div class="section-label">SAVE THE DATE</div>
+      <h2>幸福倒數</h2>
+
+      <div class="countdown" id="countdown" aria-live="polite">
+        <div class="count-item">
+          <div class="count-number" id="days">--</div>
+          <div class="count-label">DAYS</div>
+        </div>
+        <div class="count-item">
+          <div class="count-number" id="hours">--</div>
+          <div class="count-label">HOURS</div>
+        </div>
+        <div class="count-item">
+          <div class="count-number" id="minutes">--</div>
+          <div class="count-label">MINUTES</div>
+        </div>
+        <div class="count-item">
+          <div class="count-number" id="seconds">--</div>
+          <div class="count-label">SECONDS</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="event-section" id="details">
+      <div class="section-label">THE CELEBRATION</div>
+      <h2>婚禮資訊</h2>
+
+      <div class="event-card">
+        <p class="venue-name">青青風車莊園【巴洛克廳】</p>
+
+        <div class="event-row">
+          <span class="event-label">DATE · 日期</span>
+          <div class="event-value">
+            2026 年 12 月 25 日（星期五）
+          </div>
+        </div>
+
+        <div class="event-row">
+          <span class="event-label">TIME · 時間</span>
+          <div class="event-value">
+            中午 12:00 入席
+          </div>
+        </div>
+
+        <div class="event-row">
+          <span class="event-label">VENUE · 地點</span>
+          <div class="event-value">
+            青青風車莊園【巴洛克廳】
+          </div>
+        </div>
+
+        <p class="event-note">
+          期待與您相聚，<br>
+          共享這個值得紀念的日子。
+        </p>
+
+        <a
+          class="map-button"
+          href="https://www.google.com/maps/search/?api=1&query=%E9%9D%92%E9%9D%92%E9%A2%A8%E8%BB%8A%E8%8E%8A%E5%9C%92"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          開啟 Google Maps 導航 ↗
+        </a>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="section-label">SEE YOU THERE</div>
+      <h2>期待與您相見</h2>
+
+      <p class="intro-text">
+        感謝您成為我們生命中的美好風景。<br>
+        期待在這個特別的日子裡，<br>
+        與您分享幸福與感動。
+      </p>
+
+      <div class="closing-names">郭柏峰 & 張原榆</div>
+
+      <p class="gift-note">
+        您的祝福就是最好的禮物，<br>
+        宴席不收禮金，<br>
+        誠摯邀請您前來共享喜悅。
+      </p>
+
+      <hr class="divider">
+      <div class="hero-date">DECEMBER 25, 2026</div>
+    </section>
   </main>
-  <section>
-    <h2>親愛的家人與朋友</h2>
-    <p>
-      感謝一路以來的陪伴與祝福。<br>
-      誠摯邀請您與我們分享這份喜悅，<br>
-      一起留下珍貴的回憶。
-    </p>
-  </section>
-  <section>
-    <h2>婚禮資訊</h2>
-    <p>
-      日期｜敬請期待<br>
-      時間｜敬請期待<br>
-      地點｜敬請期待
-    </p>
-  </section>
-  <div class="footer">
-    WITH LOVE · 郭柏峰 & 張原榆 · 2026
-  </div>
+
+  <footer class="footer">
+    WITH LOVE · GUO & ZHANG · 2026
+  </footer>
+
+  <script>
+    (function () {
+      // 婚禮時間：台灣時間 2026/12/25 中午 12:00
+      const weddingTime = new Date(
+        "2026-12-25T12:00:00+08:00"
+      ).getTime();
+
+      const daysEl = document.getElementById("days");
+      const hoursEl = document.getElementById("hours");
+      const minutesEl = document.getElementById("minutes");
+      const secondsEl = document.getElementById("seconds");
+      const countdownEl = document.getElementById("countdown");
+
+      function updateCountdown() {
+        const remaining = weddingTime - Date.now();
+
+        if (remaining <= 0) {
+          countdownEl.innerHTML =
+            "<p>今天是值得紀念的日子，祝福滿滿！</p>";
+          return;
+        }
+
+        const days = Math.floor(remaining / 86400000);
+        const hours = Math.floor(
+          (remaining % 86400000) / 3600000
+        );
+        const minutes = Math.floor(
+          (remaining % 3600000) / 60000
+        );
+        const seconds = Math.floor(
+          (remaining % 60000) / 1000
+        );
+
+        daysEl.textContent = String(days).padStart(2, "0");
+        hoursEl.textContent = String(hours).padStart(2, "0");
+        minutesEl.textContent = String(minutes).padStart(2, "0");
+        secondsEl.textContent = String(seconds).padStart(2, "0");
+      }
+
+      updateCountdown();
+      window.setInterval(updateCountdown, 1000);
+    })();
+  </script>
 </body>
 </html>
