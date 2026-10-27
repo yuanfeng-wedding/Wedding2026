@@ -23,6 +23,7 @@
       --gold: #ad9270;
       --gold-dark: #8e704e;
       --line: #e3d9cd;
+      --ivory: #F7F1E6;
 
       --en: "Montserrat", sans-serif;
       --zh: "Noto Sans TC", sans-serif;
@@ -116,7 +117,7 @@
       text-align: center;
     }
 
-    /* 01｜首頁：原始照片，不加淡色遮罩 */
+    /* 01｜首頁：奶油白文字、不加淡色遮罩 */
 
     .hero {
       position: relative;
@@ -143,13 +144,13 @@
       z-index: 1;
       width: 100%;
       max-width: 900px;
-      color: #fff;
-      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.38);
+      color: var(--ivory);
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.28);
     }
 
     .hero-label {
       margin: 0 0 28px;
-      color: #fff;
+      color: var(--ivory);
       font-family: var(--en);
       font-size: 15px;
       font-weight: 500;
@@ -160,7 +161,7 @@
 
     .couple-names {
       margin: 0;
-      color: #fff;
+      color: var(--ivory);
       font-family: var(--zh);
       font-size: clamp(29px, 4vw, 43px);
       font-weight: 500;
@@ -170,7 +171,7 @@
 
     .hero-date {
       margin: 24px 0 0;
-      color: #fff;
+      color: var(--ivory);
       font-family: var(--en);
       font-size: 17px;
       font-weight: 500;
@@ -180,7 +181,7 @@
 
     .hero-time {
       margin: 4px 0 0;
-      color: #fff;
+      color: var(--ivory);
       font-family: var(--zh);
       font-size: 16px;
       font-weight: 500;
@@ -198,7 +199,7 @@
       margin-top: 28px;
     }
 
-    /* 03｜兩張戶外婚紗照：照片延伸至畫面兩側 */
+    /* 03｜兩張戶外婚紗照：滿版 */
 
     .gallery {
       width: 100%;
@@ -284,7 +285,7 @@
       letter-spacing: 0.04em;
     }
 
-    /* 05｜婚禮資訊：照片貼齊畫面左側，右邊為資訊 */
+    /* 05｜婚禮資訊：左圖右資訊 */
 
     .celebration {
       padding: clamp(76px, 8vw, 100px) 0;
@@ -353,6 +354,8 @@
       overflow-wrap: normal;
     }
 
+    /* 霧金色實心導航按鈕 */
+
     .map-link {
       display: inline-flex;
       min-height: 46px;
@@ -404,7 +407,7 @@
       margin-top: 26px;
     }
 
-    /* 07｜最後一張照片：滿版 */
+    /* 07｜最後一張滿版照片 */
 
     .final-photo {
       width: 100%;
@@ -470,7 +473,7 @@
       text-transform: uppercase;
     }
 
-    /* 平板與手機 */
+    /* 手機版 */
 
     @media (max-width: 700px) {
       :root {
@@ -512,7 +515,7 @@
         line-height: 2;
       }
 
-      /* 兩張照片依原比例上下排列，整個區塊滿版 */
+      /* 手機版照片上下排列，兩張都貼齊畫面左右 */
       .gallery-grid {
         grid-template-columns: 1fr;
         gap: 0;
@@ -548,7 +551,7 @@
         font-size: 13px;
       }
 
-      /* 手機仍然維持左圖右資訊 */
+      /* 手機版仍然維持左圖右資訊 */
       .venue-layout {
         grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
         gap: 0;
