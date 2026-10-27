@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f7f3ed">
   <meta name="description" content="郭柏峰與張原榆的婚禮邀請，誠摯邀請您一起分享我們的幸福。">
-  <title>郭柏峰 &amp; 張原榆｜Wedding Invitation</title>
+
+  <title>郭柏峰 &amp; 張原榆｜婚禮邀請</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +26,9 @@
       --max-width: 1120px;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     html {
       scroll-behavior: smooth;
@@ -44,14 +47,40 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    img { display: block; max-width: 100%; }
-    figure { margin: 0; }
-    a { color: inherit; }
-    .page { width: 100%; overflow: hidden; }
-    .inner { width: 100%; max-width: var(--max-width); margin: auto; }
+    img {
+      display: block;
+      max-width: 100%;
+    }
 
-    .section {
-      padding: 88px var(--side);
+    figure {
+      margin: 0;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .inner {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    /* 全站區塊標題統一 */
+    .section-title,
+    .info-content .section-title {
+      margin: 0;
+      font-family: var(--en);
+      font-size: 40px;
+      font-weight: 400;
+      line-height: 1.25;
+      letter-spacing: .10em;
+      text-align: center;
     }
 
     .eyebrow {
@@ -60,38 +89,34 @@
       font-family: var(--en);
       font-size: 15px;
       line-height: 1.4;
-      letter-spacing: .24em;
-      text-align: center;
-    }
-
-    .section-title {
-      margin: 0;
-      font-family: var(--en);
-      font-size: clamp(30px, 4.5vw, 43px);
-      font-weight: 400;
-      line-height: 1.25;
-      letter-spacing: .12em;
+      letter-spacing: .22em;
       text-align: center;
     }
 
     .section-copy {
       max-width: 640px;
       margin: 25px auto 0;
+      font-family: var(--zh);
       font-size: 14px;
       line-height: 2.15;
-      letter-spacing: .055em;
+      letter-spacing: .045em;
       text-align: center;
       overflow-wrap: anywhere;
     }
 
-    /* 01｜首頁：文字移至上方安全區，避開新人臉部 */
+    .section {
+      width: 100%;
+      padding: 88px var(--side);
+    }
+
+    /* 01｜首頁主視覺 */
     .hero {
       position: relative;
       display: flex;
       min-height: 680px;
       min-height: 100svh;
-      justify-content: center;
       align-items: flex-start;
+      justify-content: center;
       padding: 0;
       overflow: hidden;
       background: #e9e0d5;
@@ -117,20 +142,20 @@
       inset: 0;
       background: linear-gradient(
         180deg,
-        rgba(35, 28, 22, .43) 0%,
-        rgba(35, 28, 22, .20) 24%,
-        rgba(35, 28, 22, .02) 48%,
-        rgba(35, 28, 22, .12) 100%
+        rgba(35, 28, 22, .48) 0%,
+        rgba(35, 28, 22, .22) 25%,
+        rgba(35, 28, 22, .02) 52%,
+        rgba(35, 28, 22, .16) 100%
       );
       content: "";
     }
 
     .hero-content {
       width: 100%;
-      padding: clamp(34px, 7vh, 72px) 20px 30px;
+      padding: clamp(32px, 6vh, 66px) 20px 30px;
       color: #fffaf3;
       text-align: center;
-      text-shadow: 0 1px 10px rgba(35, 25, 18, .38);
+      text-shadow: 0 1px 10px rgba(35, 25, 18, .42);
     }
 
     .hero-label {
@@ -138,7 +163,7 @@
       font-family: var(--en);
       font-size: clamp(14px, 2vw, 19px);
       line-height: 1.5;
-      letter-spacing: .25em;
+      letter-spacing: .24em;
     }
 
     .couple-names {
@@ -147,26 +172,27 @@
       font-size: clamp(28px, 5vw, 42px);
       font-weight: 400;
       line-height: 1.6;
-      letter-spacing: .10em;
+      letter-spacing: .09em;
     }
 
     .hero-divider {
       width: 40px;
       height: 1px;
-      margin: 17px auto;
+      margin: 16px auto;
       background: rgba(255, 250, 243, .9);
     }
 
     .hero-date {
       margin: 0;
       font-family: var(--en);
-      font-size: clamp(18px, 2.7vw, 23px);
-      line-height: 1.5;
+      font-size: clamp(22px, 3vw, 28px);
+      line-height: 1.4;
       letter-spacing: .12em;
     }
 
     .hero-time {
-      margin: 5px 0 0;
+      margin: 6px 0 0;
+      font-family: var(--zh);
       font-size: 12px;
       letter-spacing: .12em;
     }
@@ -191,9 +217,11 @@
       background: var(--paper);
     }
 
-    .story .section-copy { margin-top: 27px; }
+    .story .section-copy {
+      margin-top: 27px;
+    }
 
-    /* 03｜兩張婚紗照統一全寬，保留原始比例 */
+    /* 03｜兩張婚紗照同寬、保留原始比例 */
     .gallery {
       padding: 0;
       background: var(--cream);
@@ -211,7 +239,6 @@
       height: auto;
     }
 
-    /* 不再額外縮小戶外照；兩張照片同寬 */
     .gallery-inset {
       padding: 0;
     }
@@ -231,8 +258,9 @@
 
     .countdown-date {
       margin: 24px 0 0;
+      font-family: var(--zh);
       font-size: 14px;
-      letter-spacing: .1em;
+      letter-spacing: .08em;
     }
 
     .countdown-grid {
@@ -242,7 +270,9 @@
       margin-top: 36px;
     }
 
-    .countdown-item { min-width: 48px; }
+    .countdown-item {
+      min-width: 48px;
+    }
 
     .countdown-number {
       display: block;
@@ -258,6 +288,7 @@
       display: block;
       margin-top: 10px;
       color: var(--muted);
+      font-family: var(--en);
       font-size: 10px;
       letter-spacing: .12em;
     }
@@ -308,10 +339,8 @@
       text-align: center;
     }
 
-    .info-content .eyebrow { margin-bottom: 14px; }
-
-    .info-content .section-title {
-      font-size: clamp(29px, 4vw, 39px);
+    .info-content .eyebrow {
+      margin-bottom: 14px;
     }
 
     .venue-hall {
@@ -331,11 +360,13 @@
       margin: 0;
       font-size: 13px;
       line-height: 2.1;
-      letter-spacing: .025em;
+      letter-spacing: .015em;
       overflow-wrap: anywhere;
     }
 
-    .info-line + .info-line { margin-top: 6px; }
+    .info-line + .info-line {
+      margin-top: 6px;
+    }
 
     .map-button {
       display: inline-flex;
@@ -388,6 +419,7 @@
     .closing-message {
       max-width: 640px;
       margin: 0 auto;
+      font-family: var(--zh);
       font-size: 14px;
       line-height: 2.15;
       letter-spacing: .045em;
@@ -406,8 +438,8 @@
       margin: 13px 0 0;
       color: var(--muted);
       font-family: var(--en);
-      font-size: 14px;
-      letter-spacing: .16em;
+      font-size: 21px;
+      letter-spacing: .15em;
     }
 
     .footer-bottom {
@@ -420,7 +452,9 @@
 
     /* 手機版 */
     @media (max-width: 700px) {
-      :root { --side: 24px; }
+      :root {
+        --side: 24px;
+      }
 
       body {
         font-size: 14px;
@@ -432,21 +466,23 @@
         padding-bottom: 65px;
       }
 
+      .section-title,
+      .info-content .section-title {
+        font-size: 32px;
+        letter-spacing: .08em;
+      }
+
       .hero {
         min-height: 680px;
         min-height: 100svh;
       }
 
-      /*
-        主視覺文字固定在上方，避開照片中間的臉部。
-        背景人物不做人工放大，避免臉部被裁切。
-      */
       .hero-photo img {
         object-position: center 50%;
       }
 
       .hero-content {
-        padding: 34px 18px 24px;
+        padding: 30px 18px 24px;
       }
 
       .hero-label {
@@ -460,18 +496,21 @@
         letter-spacing: .075em;
       }
 
-      .hero-divider { margin: 14px auto; }
-      .hero-date { font-size: 20px; }
-      .hero-time { font-size: 11px; }
+      .hero-divider {
+        margin: 14px auto;
+      }
+
+      .hero-date {
+        font-size: 23px;
+      }
+
+      .hero-time {
+        font-size: 11px;
+      }
 
       .story {
         padding-top: 68px;
         padding-bottom: 70px;
-      }
-
-      .section-title {
-        font-size: clamp(29px, 8vw, 36px);
-        letter-spacing: .10em;
       }
 
       .section-copy {
@@ -481,41 +520,50 @@
         letter-spacing: .04em;
       }
 
-      /* 黑色禮服與戶外照：同樣全寬、自然高度 */
       .gallery-photo img {
         width: 100%;
         height: auto;
       }
 
-      .gallery-inset { padding: 0; }
+      .gallery-inset {
+        padding: 0;
+      }
 
       .countdown {
         padding-top: 68px;
         padding-bottom: 70px;
       }
 
-      .countdown-date { font-size: 13px; }
+      .countdown-date {
+        font-size: 13px;
+      }
 
       .countdown-grid {
         gap: clamp(13px, 4.5vw, 23px);
         margin-top: 30px;
       }
 
-      .countdown-item { min-width: 38px; }
+      .countdown-item {
+        min-width: 38px;
+      }
 
       .countdown-number {
         font-size: clamp(30px, 8vw, 39px);
       }
 
-      .countdown-label { font-size: 9px; }
+      .countdown-label {
+        font-size: 9px;
+      }
 
-      /* 手機版：左側照片約 30%，右側文字約 70% */
+      /* 手機版：照片約 30%，文字約 70% */
       .info-layout {
         grid-template-columns: 30% 70%;
         min-height: 0;
       }
 
-      .venue-photo { min-height: 420px; }
+      .venue-photo {
+        min-height: 420px;
+      }
 
       .venue-photo img {
         object-fit: cover;
@@ -532,11 +580,6 @@
         letter-spacing: .12em;
       }
 
-      .info-content .section-title {
-        font-size: clamp(23px, 6.5vw, 30px);
-        letter-spacing: .05em;
-      }
-
       .venue-hall {
         margin-top: 16px;
         font-size: 12px;
@@ -544,7 +587,9 @@
         letter-spacing: .015em;
       }
 
-      .info-divider { margin: 16px auto; }
+      .info-divider {
+        margin: 16px auto;
+      }
 
       .info-line {
         font-size: 11px;
@@ -580,24 +625,45 @@
         font-size: 27px;
       }
 
-      .footer-bottom { margin-top: 36px; }
+      .footer-date {
+        font-size: 19px;
+      }
+
+      .footer-bottom {
+        margin-top: 36px;
+      }
     }
 
     @media (max-width: 380px) {
-      :root { --side: 18px; }
+      :root {
+        --side: 18px;
+      }
 
-      .hero-content { padding-top: 28px; }
+      .section-title,
+      .info-content .section-title {
+        font-size: 29px;
+      }
 
-      .couple-names { font-size: 27px; }
+      .hero-content {
+        padding-top: 27px;
+      }
+
+      .couple-names {
+        font-size: 27px;
+      }
 
       .info-content {
         padding-right: 9px;
         padding-left: 9px;
       }
 
-      .info-content .section-title { font-size: 22px; }
-      .venue-hall { font-size: 11px; }
-      .info-line { font-size: 10px; }
+      .venue-hall {
+        font-size: 11px;
+      }
+
+      .info-line {
+        font-size: 10px;
+      }
 
       .map-button {
         padding-right: 7px;
@@ -605,12 +671,21 @@
         font-size: 11px;
       }
 
-      .countdown-grid { gap: 11px; }
+      .countdown-grid {
+        gap: 11px;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { transition-duration: .01ms !important; }
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: .01ms !important;
+      }
     }
   </style>
 </head>
@@ -619,7 +694,7 @@
   <main class="page">
 
     <!-- 01｜首頁主視覺 -->
-    <section class="hero" aria-label="Wedding Invitation">
+    <section class="hero" aria-label="婚禮邀請">
       <div class="hero-photo">
         <img
           src="A260820-74.JPEG"
@@ -632,8 +707,8 @@
         <p class="hero-label">WEDDING INVITATION</p>
         <h1 class="couple-names">郭柏峰 &amp; 張原榆</h1>
         <div class="hero-divider"></div>
-        <p class="hero-date">DECEMBER 25, 2026</p>
-        <p class="hero-time">FRIDAY · 12:00 PM</p>
+        <p class="hero-date">12.25.2026</p>
+        <p class="hero-time">星期五・中午 12:00 入席</p>
       </div>
 
       <div class="scroll-note">SCROLL TO EXPLORE</div>
@@ -644,14 +719,16 @@
       <div class="inner">
         <p class="eyebrow">A NEW CHAPTER</p>
         <h2 class="section-title">FOREVER BEGINS</h2>
+
         <p class="section-copy">
-          從相遇到相伴，我們一步步走向共同的未來。如今，我們將在人生的重要時刻許下承諾，開啟屬於彼此的全新篇章。
+          從相遇到相伴，我們一步步走向共同的未來。<br>
+          如今，我們將在人生的重要時刻許下承諾，開啟屬於彼此的全新篇章。
         </p>
       </div>
     </section>
 
-    <!-- 03｜兩張照片同寬顯示 -->
-    <section class="gallery" aria-label="Wedding photos">
+    <!-- 03｜婚紗照 -->
+    <section class="gallery" aria-label="婚紗照片">
       <figure class="gallery-photo">
         <img
           src="A260820-216.jpeg"
@@ -676,8 +753,8 @@
     <!-- 04｜幸福倒數 -->
     <section class="section countdown">
       <div class="inner">
-        <p class="eyebrow">COUNTING DOWN</p>
-        <h2 class="section-title">幸福倒數</h2>
+        <p class="eyebrow" style="font-family: var(--zh); letter-spacing: .12em;">婚禮倒數</p>
+        <h2 class="section-title" style="font-family: var(--zh); letter-spacing: .10em;">幸福倒數</h2>
         <p class="countdown-date">2026 年 12 月 25 日・星期五</p>
 
         <div class="countdown-grid" role="timer" aria-label="距離婚禮的倒數">
@@ -705,7 +782,7 @@
       </div>
     </section>
 
-    <!-- 05｜婚禮資訊與 PNG 場地照片 -->
+    <!-- 05｜婚禮資訊與場地風景 -->
     <section class="wedding-info" id="wedding-info">
       <div class="info-layout">
         <div class="venue-photo">
@@ -717,18 +794,16 @@
         </div>
 
         <div class="info-content">
-          <p class="eyebrow">SAVE THE DATE</p>
-          <h2 class="section-title">婚禮資訊</h2>
+          <p class="eyebrow" style="font-family: var(--zh); letter-spacing: .12em;">婚禮邀請</p>
+          <h2 class="section-title" style="font-family: var(--zh); letter-spacing: .10em;">婚禮資訊</h2>
+
           <p class="venue-hall">青青風車莊園【巴洛克廳】</p>
 
           <div class="info-divider"></div>
 
           <p class="info-line">2026 年 12 月 25 日（星期五）</p>
           <p class="info-line">中午 12:00 入席</p>
-          <p class="info-line">
-            桃園市蘆竹區正興里<br>
-            中正北路 326 號
-          </p>
+          <p class="info-line">桃園市蘆竹區正興里中正北路326號</p>
 
           <a
             class="map-button"
@@ -746,14 +821,16 @@
       <div class="inner">
         <p class="eyebrow">A DAY TO REMEMBER</p>
         <h2 class="section-title">WITH LOVE</h2>
+
         <p class="section-copy">
-          在這一天，我們將彼此的承諾化作往後的每一天。謝謝您見證我們的幸福，也邀請您一起分享這份喜悅。
+          在這一天，我們將彼此的承諾化作往後的每一天。<br>
+          謝謝您見證我們的幸福，也邀請您一起分享這份喜悅。
         </p>
       </div>
     </section>
 
     <!-- 07｜最後一張婚紗照 -->
-    <section class="final-photo" aria-label="A moment together">
+    <section class="final-photo" aria-label="婚紗照片">
       <figure class="gallery-photo">
         <img
           src="A260820-75.jpeg"
@@ -767,10 +844,12 @@
     <footer class="closing">
       <div class="inner">
         <p class="closing-message">
-          您的祝福就是最好的禮物，宴席不收禮金，誠摯邀請您前來共享喜悅。
+          您的祝福就是最好的禮物，宴席不收禮金，<br>
+          誠摯邀請您前來共享喜悅。
         </p>
+
         <p class="footer-names">KUO <span>&amp;</span> CHANG</p>
-        <p class="footer-date">DECEMBER 25, 2026</p>
+        <p class="footer-date">12.25.2026</p>
         <p class="footer-bottom">WITH LOVE AND GRATITUDE</p>
       </div>
     </footer>
