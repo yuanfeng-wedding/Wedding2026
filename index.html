@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex, nofollow">
-  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
   <title>郭柏峰 & 張原榆｜Wedding Invitation</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,6 +46,9 @@
     img {
       display: block;
       max-width: 100%;
+      -webkit-user-drag: none;
+      user-select: none;
+      -webkit-user-select: none;
     }
 
     .english {
@@ -54,7 +57,7 @@
       letter-spacing: 0.16em;
     }
 
-    /* 首頁：文字置於照片上方，全部粗體 */
+    /* 首頁：文字位於照片上方，全部粗體 */
     .hero {
       position: relative;
       display: flex;
@@ -147,6 +150,7 @@
       margin: 0 auto;
     }
 
+    /* 區塊英文標題統一 */
     .section-label {
       margin: 0 0 14px;
       color: var(--gold-dark);
@@ -426,8 +430,10 @@
         padding: 70px 22px;
       }
 
+      /* 所有區塊英文標題統一：手機 10px */
       .section-label {
         font-size: 10px;
+        letter-spacing: 0.22em;
       }
 
       .section-title {
@@ -494,10 +500,11 @@
         padding: 30px 14px 30px 16px;
       }
 
+      /* THE WEDDING 與其他區塊英文標題一致 */
       .venue-details .section-label {
         margin-bottom: 8px;
-        font-size: 9px;
-        letter-spacing: 0.12em;
+        font-size: 10px;
+        letter-spacing: 0.22em;
       }
 
       .venue-title {
@@ -561,6 +568,7 @@
       class="hero-image"
       src="A260820-74.JPEG"
       alt="兩人的婚紗照"
+      draggable="false"
     >
 
     <div class="hero-content">
@@ -592,8 +600,8 @@
 
   <!-- 戶外照片 -->
   <section class="photo-pair" aria-label="我們的照片">
-    <img src="A260820-216.jpeg" alt="兩人的戶外婚紗照">
-    <img src="A260820-94.jpeg" alt="兩人的戶外婚紗照">
+    <img src="A260820-216.jpeg" alt="兩人的戶外婚紗照" draggable="false">
+    <img src="A260820-94.jpeg" alt="兩人的戶外婚紗照" draggable="false">
   </section>
 
   <!-- 婚禮倒數 -->
@@ -631,7 +639,12 @@
   <!-- 婚禮資訊 -->
   <section class="wedding-info" aria-label="婚禮資訊">
     <div class="venue-image-wrap">
-      <img class="venue-image" src="venue.png" alt="青青風車莊園婚宴場地">
+      <img
+        class="venue-image"
+        src="venue.png"
+        alt="青青風車莊園婚宴場地"
+        draggable="false"
+      >
     </div>
 
     <div class="venue-details">
@@ -670,7 +683,7 @@
 
   <!-- 最後照片 -->
   <section class="final-photo" aria-label="婚紗照片">
-    <img src="A260820-75.jpeg" alt="兩人的婚紗照">
+    <img src="A260820-75.jpeg" alt="兩人的婚紗照" draggable="false">
   </section>
 
   <!-- 頁尾 -->
@@ -726,6 +739,19 @@
 
     updateCountdown();
     setInterval(updateCountdown, 1000);
+
+    /* 防止一般右鍵操作圖片及拖曳圖片；不代表能阻止下載 */
+    document.addEventListener("contextmenu", function(event) {
+      if (event.target.closest("img")) {
+        event.preventDefault();
+      }
+    });
+
+    document.addEventListener("dragstart", function(event) {
+      if (event.target.closest("img")) {
+        event.preventDefault();
+      }
+    });
   </script>
 </body>
 </html>
