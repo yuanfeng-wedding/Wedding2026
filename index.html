@@ -316,7 +316,7 @@
     }
 
     .parking-note {
-      margin: 12px 0 0;
+      margin: 0 0 12px;
       color: var(--muted);
       font-size: 14px;
       font-weight: 300;
@@ -528,7 +528,7 @@
       }
 
       .parking-note {
-        margin-top: 9px;
+        margin: 0 0 9px;
         font-size: 12px;
         line-height: 1.7;
       }
@@ -592,8 +592,8 @@
       <h2 class="section-title">我們的故事</h2>
 
       <p class="section-copy">
-        從相識到相愛，一路走來經歷了許多難忘的點滴，也讓我們更加珍惜彼此。<br>
-        期待未來的日子裡，還能一起寫下更多屬於我們的故事。
+        從相識、相知到相愛，我們在生活的點滴中慢慢了解彼此，也更加確定了攜手走下去的心意。<br>
+        未來的日子，期待繼續陪伴彼此，一起走過生活中的每個重要時刻。
       </p>
     </div>
   </section>
@@ -632,7 +632,7 @@
     </div>
 
     <p class="countdown-note" id="countdown-note">
-      期待與您們一起分享這份幸福。
+      期待與您一同分享這份喜悅。
     </p>
   </section>
 
@@ -657,14 +657,14 @@
         桃園市蘆竹區正興里中正北路326號3樓
       </p>
 
+      <p class="parking-note">會場附設停車場</p>
+
       <a
         class="map-button"
         href="https://www.google.com/maps/dir/?api=1&destination=%E9%9D%92%E9%9D%92%E9%A2%A8%E8%BB%8A%E8%8E%8A%E5%9C%92"
         target="_blank"
         rel="noopener noreferrer"
-      >導航</a>
-
-      <p class="parking-note">*會場附設停車場</p>
+      >Google 地圖導航</a>
     </div>
   </section>
 
@@ -675,8 +675,8 @@
       <h2 class="section-title">幸福相聚</h2>
 
       <p class="section-copy">
-        對我們而言，這一天有著特別的意義。因為有您們的陪伴，這份幸福才更加完整。<br>
-        希望能與重要的您們一同度過，留下值得珍藏的美好回憶。
+        這一天，因為有大家的參與，將變得更加美好。<br>
+        誠摯邀請您與我們一同相聚，留下屬於我們的珍貴回憶。
       </p>
     </div>
   </section>
@@ -716,7 +716,7 @@
         hoursElement.textContent = "0";
         minutesElement.textContent = "0";
         secondsElement.textContent = "0";
-        noteElement.textContent = "期待與您們一起分享這份幸福。";
+        noteElement.textContent = "期待與您一同分享這份喜悅。";
         return;
       }
 
@@ -740,7 +740,7 @@
     updateCountdown();
     setInterval(updateCountdown, 1000);
 
-    /* 防止一般右鍵操作圖片及拖曳圖片；不代表能阻止下載 */
+    /* 防止一般右鍵操作圖片及拖曳圖片；無法完全阻止圖片被保存 */
     document.addEventListener("contextmenu", function(event) {
       if (event.target.closest("img")) {
         event.preventDefault();
