@@ -43,12 +43,15 @@
       letter-spacing: 0.04em;
     }
 
+    /* 圖片防護：停用選取、拖曳及支援的長按選單 */
     img {
       display: block;
       max-width: 100%;
       -webkit-user-drag: none;
       user-select: none;
       -webkit-user-select: none;
+      -webkit-touch-callout: none;
+      touch-action: pan-y;
     }
 
     .english {
@@ -740,17 +743,25 @@
     updateCountdown();
     setInterval(updateCountdown, 1000);
 
-    /* 防止一般右鍵操作圖片及拖曳圖片；無法完全阻止圖片被保存 */
-    document.addEventListener("contextmenu", function(event) {
-      if (event.target.closest("img")) {
-        event.preventDefault();
-      }
-    });
+    /* 圖片防護：右鍵、拖曳、選取及手機長按選單 */
+    document.querySelectorAll("img").forEach(function(img) {
+      img.setAttribute("draggable", "false");
 
-    document.addEventListener("dragstart", function(event) {
-      if (event.target.closest("img")) {
+      img.addEventListener("contextmenu", function(event) {
         event.preventDefault();
-      }
+      });
+
+      img.addEventListener("dragstart", function(event) {
+        event.preventDefault();
+      });
+
+      img.addEventListener("selectstart", function(event) {
+        event.preventDefault();
+      });
+
+      img.addEventListener("touchstart", function() {
+        img.style.webkitTouchCallout = "none";
+      }, { passive: true });
     });
   </script>
 </body>
